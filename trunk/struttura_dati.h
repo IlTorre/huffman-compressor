@@ -61,6 +61,6 @@ const int CARATTERI_ASCII = 257;
  */
 
 struct queue{
-nodo_t elemento[CARATTERI_ASCII];
+pnode elemento[CARATTERI_ASCII];
 int n_elementi;
 };
