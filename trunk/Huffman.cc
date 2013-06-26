@@ -19,7 +19,7 @@
  */
 
 #include <iostream>
-#include <gtk/gtk.h>
+//#include <gtk/gtk.h>
 #include "struttura_dati.h"
 #include "comprimi.h"
 #include "decomprimi.h"
