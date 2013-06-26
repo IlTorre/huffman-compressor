@@ -30,11 +30,11 @@ enum colore_t{bianco, grigio, nero};
 struct nodo_t{
 char carattere;
 int occorrenze;
-char *codice;
+/*char *codice;
 colore_t colore;
 nodo_t *parent;
 nodo_t *left;
-nodo_t *right;
+nodo_t *right;*/
 };
 
 
@@ -42,7 +42,7 @@ nodo_t *right;
  *
  * Puntatore a un elemento dell'albero, serve per spostarsi gradualmente sui vari nodi.
  */
-typedef nodo_t **pnode;
+typedef nodo_t *pnode;
 
 
 /** Numero massimo di caratteri.
@@ -61,6 +61,6 @@ const int CARATTERI_ASCII = 257;
  */
 
 struct queue{
-pnode elemento;
+pnode elemento[CARATTERI_ASCII];
 int n_elementi;
 };

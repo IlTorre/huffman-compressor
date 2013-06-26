@@ -8,10 +8,10 @@
  * La funzione prende in ingresso una coda e la inizializza a 0 elementi.
  */
 void inizializza_coda(queue &coda){
-	coda.elemento=new pnode [CARATTERI_ASCII];
+	//coda.elemento=new pnode [CARATTERI_ASCII];
 	for (int i=1; i<CARATTERI_ASCII;i++){
 		coda.elemento[i]->occorrenze=0;
-		coda.elemento[i]->carattere=static_cast<char>(i-1);
+		coda.elemento[i]->carattere=/*static_cast<char>*/(i-1);
 		}
 	coda.n_elementi=0;
 }
