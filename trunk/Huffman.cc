@@ -23,3 +23,8 @@
 #include "struttura_dati.h"
 #include "comprimi.h"
 #include "decomprimi.h"
+
+int main(){
+	comprimi("test.txt","compresso.huff");
+	return 0;
+}

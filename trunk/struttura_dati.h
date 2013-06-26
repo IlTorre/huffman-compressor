@@ -4,6 +4,7 @@
  */
 
 #include <iostream>
+using namespace std;
 
 /** Stato di esplorazione.
  *
@@ -34,14 +35,14 @@ colore_t colore;
 nodo_t *parent;
 nodo_t *left;
 nodo_t *right;
-}
+};
 
 
 /** Puntatore a un nodo (::nodo_t).
  *
  * Puntatore a un elemento dell'albero, serve per spostarsi gradualmente sui vari nodi.
  */
-typedef nodo_t *pnode;
+typedef nodo_t **pnode;
 
 
 /** Numero massimo di caratteri.
@@ -58,7 +59,8 @@ const int CARATTERI_ASCII = 257;
  *
  * Contiene quanti elementi sono nella coda e un vettore con gli elementi.
  */
+
 struct queue{
-pnode elemento[CARATTERI_ASCII];
+pnode elemento;
 int n_elementi;
 };
