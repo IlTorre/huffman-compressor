@@ -30,7 +30,6 @@ enum colore_t{bianco, grigio, nero};
 struct nodo_t{
 char carattere;
 int occorrenze;
-char *codice;
 colore_t colore;
 nodo_t *parent;
 nodo_t *left;
@@ -52,7 +51,7 @@ typedef nodo_t *pnode;
  * permette di semplificare le operazioni sullo Heap, le cui posizioni
  * partono da 1.
  */
-const int CARATTERI_ASCII = 257;
+const int CARATTERI_ASCII = 256+1;
 
 
 /** Struttura della Coda.
@@ -64,3 +63,8 @@ struct queue{
 pnode elemento[CARATTERI_ASCII];
 int n_elementi;
 };
+
+
+/**
+ */
+typedef char *codice [CARATTERI_ASCII-1];

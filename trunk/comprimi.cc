@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include "struttura_dati.h"
 
 
@@ -113,9 +114,9 @@ void RestoreHeap(queue &coda, int pos){
  *
  * La funzione modifica la coda in modo da eliminare gli
  * eleminti che non sono presenti nel file.
- * Restituisce un min Heap.
+ * Restituisce un min Heap e il numero di caratteri presenti.
  */
-void pulisci_coda(queue &coda){
+int pulisci_coda(queue &coda){
 	BuildMinHeap(coda);
 	HeapSort(coda);
 	while(coda.elemento[coda.n_elementi]->occorrenze==0){
@@ -123,6 +124,7 @@ void pulisci_coda(queue &coda){
 		coda.n_elementi--;
 		}
 	BuildMinHeap(coda);
+	return coda.n_elementi;
 }
 
 
@@ -206,15 +208,115 @@ pnode crea_albero(queue &coda){
 }
 
 
+/** Resetta i colori dei nodi.
+ *
+ * La funzione scorre tutti i nodi dell'albero e inizilializza
+ * a bianco tutti i nodi interni, solo le foglie a nero.
+ */
+void resetta_colori(const pnode &root){
+	pnode p = root;
+	if (p->left == NULL && p->right == NULL){
+		p->colore = nero;
+		return;
+		}
+	p->colore = bianco;
+	if (p->left != NULL)
+		resetta_colori(p->left);
+	if (p->right != NULL)
+		resetta_colori(p->right);	
+}
+
+
+/** Sistema i colori dei nodi
+*
+* Aggiusta i colori dei genitori dei nodi appena esplorati in
+* modo da saltare la stampa di nodi privi di chiave
+* significativa.
+* Nodo BIANCO indica un nodo inesplorato.
+* Nodo GRIGIO indica esplorato il sottoalbero di sinistra.
+* Nodo NERO indica che il nodo è stato esplorato completamente
+* (sia in suo sottoalbero di sinistra che quello di destra è
+* stato scoperto).
+*
+*/
+void controllo_colore (pnode x, const pnode root){
+	if (x->colore == bianco)
+		x->colore = grigio;
+	else{
+		x->colore = nero;
+		if (x != root)
+			controllo_colore (x->parent, root);
+		}
+}
+
+
+/**
+ */
+void alloca(codice &conversione, char car, char buf[]){
+	int lun = strlen(buf)+1;
+	conversione[static_cast<int>(car)] = new char [lun];
+	strcpy(conversione[static_cast<int>(car)],buf);
+}
+ 
+ 
+/** Genera una matrice contenente i codici di conversione.
+ *
+ * 
+ */
+void genera_codice(const pnode &root, codice &conversione, const int num_caratteri){
+	char *buffer = new char [num_caratteri];
+	resetta_colori(root);
+	pnode x = root;
+	int i = 0;
+	while(root->colore != nero){
+		if (x->colore == bianco){
+			buffer[i++]='0';
+			x=x->left;
+			}
+		if (x->colore == grigio){
+			buffer[i++]='1';
+			x=x->right;
+			}
+		if (x->colore == nero){
+			buffer[i] = '\0';
+			alloca(conversione, x->carattere, buffer);
+			controllo_colore(x->parent, root);
+			x = root;
+			i=0;
+			}
+		}
+}
+
+//DEBUG
+void DDD(const pnode p, bool foglie){
+	if (p != NULL){
+		DDD(p->left, foglie);
+		if (foglie && p->carattere != -1)
+			cout<<p->colore<<endl;
+		if (!foglie && p->carattere == -1)
+			cout<<p->colore<<endl;
+		DDD(p->right, foglie);
+		}
+}
+
 bool comprimi (char sorgente[], char destinazione[]){
 	queue coda;
 	inizializza_coda(coda);
 	conta_occorrenze(sorgente, coda);
-	pulisci_coda(coda);
-	crea_albero(coda);
-	for(int i=1;i<=coda.n_elementi;i++){
-		cout<<coda.elemento[i]->carattere<<"\t"<<coda.elemento[i]->occorrenze<<endl;
-	}
+	int num_caratteri = pulisci_coda(coda);
+	pnode root = crea_albero(coda); //mettere const?
+	codice conversione;
+	genera_codice(root,conversione,num_caratteri);
+	
+	//DEBUG
+	cout<<"foglie:"<<endl;
+	DDD(root, true);
+	cout<<"interni:"<<endl;
+	DDD(root, false);
+	//FINE DEBUG
+	
+
+	
 /*pulisci_coda(coda); FATTO
 int num_caratteri=coda.n_elementi;
 crea_albero(coda);
