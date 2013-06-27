@@ -31,7 +31,8 @@ bool conta_occorrenze(char sorgente[], queue &coda){
 		return false;
 	while(f.read(reinterpret_cast<char *>(&car), sizeof (car)))
 		coda.elemento[static_cast<int>(car)+1]->occorrenze++;
-	coda.n_elementi=CARATTERI_ASCII-1	;
+	coda.n_elementi=CARATTERI_ASCII-1;
+	f.close();
 	return true;
 }
 
@@ -287,6 +288,16 @@ void genera_codice(const pnode &root, codice &conversione, const int num_caratte
 		}
 }
 
+
+/**
+ */
+/*bool scrivi_file(const char destinazione[], char preambolo[], int albero[], codice conversione){
+crea prembolo
+crea albero
+scrivi
+}
+*/
+
 //DEBUG
 void DDD(const pnode p, bool foglie){
 	if (p != NULL){
@@ -307,7 +318,7 @@ bool comprimi (char sorgente[], char destinazione[]){
 	pnode root = crea_albero(coda); //mettere const?
 	codice conversione;
 	genera_codice(root,conversione,num_caratteri);
-	
+	//return(scrivi_file())
 	//DEBUG
 	cout<<"foglie:"<<endl;
 	DDD(root, true);
