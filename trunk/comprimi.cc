@@ -6,6 +6,7 @@
 /** Inizializzazione della coda
  *
  * La funzione prende in ingresso una coda e la inizializza a 0 elementi.
+ * La funzione inoltre azzera tutte le occorrenze
  */
 void inizializza_coda(queue &coda){
 	for (int i=1; i<CARATTERI_ASCII;i++){
@@ -57,6 +58,10 @@ if (k!=j)
 }
 
 
+/** Costruzione di un Min-Heap.
+ *
+ * La funzione costruisce un Min Heap.
+ */
 void BuildMinHeap(queue &coda)
 {
 for (int i=coda.n_elementi/2;i>=1;i--)
@@ -64,6 +69,11 @@ for (int i=coda.n_elementi/2;i>=1;i--)
 }
 
 
+/** Ordinamento decrescente.
+ *
+ * La funzione permette di ordinare un vettore in modo
+ * decrescente utilizzando un Heap. (Heap Sort).
+ */
 void HeapSort(queue &coda)
 {
 for (int i=coda.n_elementi;i>1;i--)
@@ -73,12 +83,20 @@ for (int i=coda.n_elementi;i>1;i--)
 	}
 }
 
+
+/** Elimina i caratteri non presenti nel file.
+ *
+ * La funzione modifica la coda in modo da eliminare gli
+ * eleminti che non sono presenti nel file.
+ */
 void pulisci_coda(queue &coda)
 {
 BuildMinHeap(coda);
 HeapSort(coda);
-while(coda.elemento[coda.n_elementi]->occorrenze==0)
+while(coda.elemento[coda.n_elementi]->occorrenze==0){
+	delete[] coda.elemento[coda.n_elementi];
 	coda.n_elementi--;
+	}
 }
 
 bool comprimi (char sorgente[], char destinazione[]){
