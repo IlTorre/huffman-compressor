@@ -25,6 +25,8 @@
 #include "decomprimi.h"
 
 int main(){
-	comprimi("test.txt","compresso.huff");
+	char sorg[]="test.txt";
+	char dest[]="compresso.huf";
+	comprimi(sorg,dest);
 	return 0;
 }
