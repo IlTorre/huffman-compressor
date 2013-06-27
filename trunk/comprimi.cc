@@ -289,14 +289,62 @@ void genera_codice(const pnode &root, codice &conversione, const int num_caratte
 }
 
 
+
+/* PREAMBOLO 2
+while (i<n_caratteri){
+		if (x->left != NULL){
+			preambolo[++i] = '0';
+			x = x->left;
+			}
+		else {
+			preambolo[++i]='1';
+			}
+		}
+*/
+
+
+
 /**
  */
-/*bool scrivi_file(const char destinazione[], char preambolo[], int albero[], codice conversione){
-crea prembolo
-crea albero
-scrivi
+void preambolo_ric(char preambolo[], pnode &x, int &i){
+	 if (x->left == NULL && x->right == NULL){
+ 		preambolo[i++] = x->carattere;
+ 		return;
+ 		}
+ 	if (x->left != NULL)
+		preambolo_ric(preambolo,x->left,i);
+ 	if (x->right != NULL)
+		preambolo_ric(preambolo,x->right,i);
+ 	
 }
-*/
+/**
+ */
+void crea_preambolo(char preambolo[], pnode root, int n_caratteri){
+	preambolo[0] = static_cast<char>(n_caratteri);
+	int i = 1;
+	pnode x = root;
+	preambolo_ric(preambolo,x,i);
+}
+
+
+/**
+ */
+bool scrivi_file(const char destinazione[], int n_caratteri, pnode root){
+	char preambolo[n_caratteri];
+	crea_preambolo(preambolo,root,n_caratteri);
+	ofstream f2 (destinazione);
+	if (!f2)
+		return false;
+	for(int j=0;j<n_caratteri;j++)
+		f2<<preambolo[j];
+	return true;
+
+/*
+crea prembolo ok fatta
+crea albero
+scrivi*/
+}
+
 
 //DEBUG
 void DDD(const pnode p, bool foglie){
@@ -318,6 +366,7 @@ bool comprimi (char sorgente[], char destinazione[]){
 	pnode root = crea_albero(coda); //mettere const?
 	codice conversione;
 	genera_codice(root,conversione,num_caratteri);
+	scrivi_file(destinazione, num_caratteri, root);
 	//return(scrivi_file())
 	//DEBUG
 	cout<<"foglie:"<<endl;
