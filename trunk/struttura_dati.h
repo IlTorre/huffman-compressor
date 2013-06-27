@@ -30,11 +30,11 @@ enum colore_t{bianco, grigio, nero};
 struct nodo_t{
 char carattere;
 int occorrenze;
-/*char *codice;
+char *codice;
 colore_t colore;
 nodo_t *parent;
 nodo_t *left;
-nodo_t *right;*/
+nodo_t *right;
 };
 
 

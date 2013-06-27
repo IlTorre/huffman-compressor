@@ -155,12 +155,63 @@ pnode dequeue(queue &coda){
 	return x;
 }
  
- 
+
+/** Aggancia padre e figli.
+ *
+ * La funzione riceve in ingresso tre puntatori. Il primo prende
+ * come figli gli altri due. La funzione si limita all'aggiornamento
+ * dei puntatori degli elementi passati.
+ */
+void aggancia (pnode &p, pnode &l, pnode &r){
+	l->parent = p;
+	r->parent = p;
+	p->left = l;
+	p->right= r;
+}
+/** Unisce due nodi.
+ *
+ * La funzione crea un nuovo nodo che ha come carattere un valore
+ * non significativo e come occorrenze la somma delle occorrenze
+ * dei nodi passati. Li ::aggancia come figli e infine ritorna un
+ * puntatore all'oggetto creato.
+ */
+pnode unisci_nodi(pnode &x, pnode &y){
+	pnode p = new nodo_t;
+	p->carattere=-1;
+	p->occorrenze = x->occorrenze + y->occorrenze;
+	p->parent=NULL;
+	aggancia(p,x,y);
+	return p;
+}
+
+
+/** Crea l'albero di compressione.
+ *
+ * La funzione estrae dalla coda (::dequeue) due elementi e li
+ * unisce (::unisci_nodi), rimette in coda (::enqueue) il nuovo
+ * nodo ottenuto. Quando in coda rimane un solo elemento
+ * ritorna il puntatore alla radice dell'albero creato e svuota
+ * la coda.
+ */
+pnode crea_albero(queue &coda){
+	while (coda.n_elementi>1){
+		pnode x = dequeue (coda);
+		pnode y = dequeue (coda);
+		pnode p = unisci_nodi(x,y);
+		enqueue (coda,p);
+		}
+	pnode root = coda.elemento[1];
+	coda.n_elementi = 0;
+	return root;
+}
+
+
 bool comprimi (char sorgente[], char destinazione[]){
 	queue coda;
 	inizializza_coda(coda);
 	conta_occorrenze(sorgente, coda);
 	pulisci_coda(coda);
+	crea_albero(coda);
 	for(int i=1;i<=coda.n_elementi;i++){
 		cout<<coda.elemento[i]->carattere<<"\t"<<coda.elemento[i]->occorrenze<<endl;
 	}
