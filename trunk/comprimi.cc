@@ -13,7 +13,7 @@ void inizializza_coda(queue &coda){
 	for (int i=1; i<CARATTERI_ASCII;i++){
 		coda.elemento[i]=new nodo_t;
 		coda.elemento[i]->occorrenze=0;
-		coda.elemento[i]->carattere=static_cast<char>(i-1);
+		coda.elemento[i]->carattere=static_cast<unsigned char>(i-1);
 		}
 	coda.n_elementi=0;
 }
@@ -26,7 +26,7 @@ void inizializza_coda(queue &coda){
  * l'operazione è andata a buon fine.
  */
 bool conta_occorrenze(char sorgente[], queue &coda){
-	char car;
+	unsigned char car;
 	ifstream f (sorgente);
 	if (!f) 
 		return false;
@@ -260,7 +260,7 @@ void controllo_colore (pnode x, const pnode root){
  * funzione viene chiamata e assegna il codice trovato fino a
  * quel momento alla posizione del carattere trovato nella foglia.
  */
-void alloca(codice &conversione, char car, char buf[]){
+void alloca(codice &conversione, unsigned char car, char buf[]){
 	int lun = strlen(buf)+1;
 	conversione[static_cast<int>(car)] = new char [lun];
 	strcpy(conversione[static_cast<int>(car)],buf);
@@ -303,7 +303,7 @@ void genera_codice(const pnode &root, codice &conversione, const int num_caratte
  * le lettere presenti nelle foglie. Salva il risltato in un
  * buffer.
  */
-void preambolo_ric(char preambolo[], pnode &x, int &i){
+void preambolo_ric(unsigned char preambolo[], pnode &x, int &i){
 	 if (x->left == NULL && x->right == NULL){
  		preambolo[i++] = x->carattere;
  		return;
@@ -323,8 +323,8 @@ void preambolo_ric(char preambolo[], pnode &x, int &i){
  * Questa configurazione permette al decompressore di ricostruire
  * l'albero biario e di conseguenza il codice di decompressione.
  */
-void crea_preambolo(char preambolo[], pnode root, int n_caratteri){
-	preambolo[0] = static_cast<char>(n_caratteri);
+void crea_preambolo(unsigned char preambolo[], pnode root, int n_caratteri){
+	preambolo[0] = static_cast<unsigned char>(n_caratteri);
 	int i = 1;
 	pnode x = root;
 	preambolo_ric(preambolo,x,i);
@@ -366,7 +366,7 @@ MASK = MASK | 1;
  * preambolo.
  */
 void scrivi_preambolo(ostream &f2, pnode root, int n_caratteri){
-	char preambolo[n_caratteri];
+	unsigned char preambolo[n_caratteri];
 	crea_preambolo(preambolo,root,n_caratteri);
 	for(int j=0;j<=n_caratteri;j++)
 		f2<<preambolo[j];
@@ -417,7 +417,7 @@ void svuota_buffer(ostream &f2, char &BUFFER, int &l_buffer){
  * La funzione riceve in input un caratere e scrive sul
  * flusso il codice relativo.
  */
-void scrivi_codice(ostream &f2, codice conversione, char car, char &BUFFER, int &l_buffer){
+void scrivi_codice(ostream &f2, codice conversione, unsigned char car, char &BUFFER, int &l_buffer){
 	int i=0;
 	while(conversione[static_cast<int>(car)][i] != '\0'){
 		BUFFER = BUFFER<<1;
@@ -444,7 +444,7 @@ bool converti(ostream &f2, codice conversione, const char sorgente[], char &BUFF
 	ifstream f3 (sorgente);
 	if(!f3)
 		return false;
-	char car;
+	unsigned char car;
 	while(f3.read(reinterpret_cast<char *>(&car), sizeof (car)))
 		scrivi_codice (f2, conversione, car, BUFFER,l_buffer);
 	f3.close();

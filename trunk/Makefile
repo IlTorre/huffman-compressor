@@ -1,8 +1,8 @@
 OBJ = Huffman.o comprimi.o decomprimi.o
-CXXFLAGS=$(DEBUG_FLAGS) -Wall
+CXXFLAGS=$(DEBUG_FLAGS) -Wall -g
 
 Huffman: $(OBJ)
-	g++ -o Huffman $(OBJ) $(LDFLAGS)
+	g++ -o Huffman -g $(OBJ) $(LDFLAGS)
 
 -include dependencies
 

@@ -28,8 +28,8 @@ enum colore_t{bianco, grigio, nero};
  * puntatori al PADRE, FIGLIO SINISTRO e DESTRO.
  */
 struct nodo_t{
-char carattere;
-int occorrenze;
+unsigned char carattere;
+unsigned long occorrenze;
 colore_t colore;
 nodo_t *parent;
 nodo_t *left;
