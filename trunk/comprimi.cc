@@ -21,7 +21,8 @@ void inizializza_coda(queue &coda){
 /** Conta le occorrenze di ogni lettera.
  *
  * Prende in ingresso il file sorgente e conta le occorrenze di tutte le
- * lettere. La funzione restituisce un valore booleano che segnala se
+ * lettere. Riserva inoltre un carattere per segnalare la fine del file.
+ * La funzione restituisce un valore booleano che segnala se
  * l'operazione è andata a buon fine.
  */
 bool conta_occorrenze(char sorgente[], queue &coda){
