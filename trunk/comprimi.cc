@@ -156,6 +156,7 @@ pnode dequeue(queue &coda){
 	if (coda.n_elementi>1)
 		MinHeapify(coda,1,coda.n_elementi);
 	return x;
+BuildMinHeap(coda);
 }
  
 
