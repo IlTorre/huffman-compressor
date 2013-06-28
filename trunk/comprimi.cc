@@ -363,7 +363,7 @@ MASK = MASK | 1;
  * La funzione riceve in insgresso lo stream sul quale scrive il
  * preambolo.
  */
-void scrivi_preambolo(ostream f2, pnode root, int n_caratteri){
+void scrivi_preambolo(ostream &f2, pnode root, int n_caratteri){
 	char preambolo[n_caratteri];
 	crea_preambolo(preambolo,root,n_caratteri);
 	for(int j=0;j<=n_caratteri;j++)
@@ -371,50 +371,61 @@ void scrivi_preambolo(ostream f2, pnode root, int n_caratteri){
 }
 
 
+/** Scrive il codice identificativo dell'albero sul file.
+ */
+void scrivi_albero (ostream &f2, pnode root, int n_caratteri, char &BUFFER, int &l_buffer){
+	bool albero[2*(n_caratteri-1)];
+	int i=0;
+	codice_albero(albero, root, i);
+	for(int k=0;k<2*(n_caratteri-1);k++){
+		BUFFER = BUFFER<<1;
+		if (albero [k])
+			setlastbit(BUFFER);
+		l_buffer++;
+		if (l_buffer == 8){
+			f2<<BUFFER;
+			BUFFER = 0;
+			l_buffer = 0;
+			}
+	}
+}
+
+
 /**
  */
-
+void svuota_buffer(ostream &f2, char &BUFFER, int &l_buffer){
+	if (l_buffer > 0){
+		BUFFER = BUFFER<<(8-l_buffer);
+		f2<<BUFFER;
+		l_buffer = 0;
+		BUFFER = 0;
+		}
+}
 
 
 /**
  */
 bool scrivi_file(const char destinazione[], int n_caratteri, pnode root){
 
-	bool albero[2*(n_caratteri-1)];
-	int i=0;
-	codice_albero(albero, root, i);
+
 	
-	/*for(int j=0; j< 2*(n_caratteri-1); j++)
+	/**for(int j=0; j< 2*(n_caratteri-1); j++)
 		cout<<albero[j]<<" ";
 	cout<<endl;*/
 	
 	ofstream f2 (destinazione);
 	if (!f2)
 		return false;
+	
 	scrivi_preambolo(f2, root, n_caratteri);
-
+	char BUFFER = 0;
+	int l_buffer = 0;
+	scrivi_albero(f2, root, n_caratteri, BUFFER, l_buffer);
 	
-	
-	char MASK = 0;
-	int controllo = 0;
-	for(int k=0;k<2*(n_caratteri-1);k++){
-		MASK = MASK<<1;
-		if (albero [k])
-			setlastbit(MASK);
-		controllo++;
-		if (controllo == 8){
-			f2<<MASK;
-			MASK = 0;
-			controllo = 0;
-			}
-	}
+	svuota_buffer(f2, BUFFER, l_buffer);
 	f2.close();
 	return true;
 
-/*
-crea prembolo ok fatta
-crea albero
-scrivi*/
 }
 
 
