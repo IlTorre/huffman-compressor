@@ -33,6 +33,7 @@ bool conta_occorrenze(char sorgente[], queue &coda){
 		coda.elemento[static_cast<int>(car)+1]->occorrenze++;
 	coda.n_elementi=CARATTERI_ASCII-1;
 	f.close();
+	coda.elemento[1]->occorrenze++;
 	return true;
 }
 
@@ -372,6 +373,10 @@ void scrivi_preambolo(ostream &f2, pnode root, int n_caratteri){
 
 
 /** Scrive il codice identificativo dell'albero sul file.
+ *
+ * Utilizzando la funzione ::codice_albero scrive il codice
+ * ottenuto nel file. Se rimangono bit sul buffer verranno
+ * completati in seguito.
  */
 void scrivi_albero (ostream &f2, pnode root, int n_caratteri, char &BUFFER, int &l_buffer){
 	bool albero[2*(n_caratteri-1)];
@@ -391,7 +396,10 @@ void scrivi_albero (ostream &f2, pnode root, int n_caratteri, char &BUFFER, int 
 }
 
 
-/**
+/** Svuota il buffer.
+ *
+ * La funzione controlla se ci sono bit significativi nel
+ * ::BUFFER e se presenti li scrive nel file.
  */
 void svuota_buffer(ostream &f2, char &BUFFER, int &l_buffer){
 	if (l_buffer > 0){
@@ -403,16 +411,68 @@ void svuota_buffer(ostream &f2, char &BUFFER, int &l_buffer){
 }
 
 
-/**
+/** Scrive il codice di un dato carattere.
+ *
+ * La funzione riceve in input un caratere e scrive sul
+ * flusso il codice relativo.
  */
-bool scrivi_file(const char destinazione[], int n_caratteri, pnode root){
+void scrivi_codice(ostream &f2, codice conversione, char car, char &BUFFER, int &l_buffer){
+	int i=0;
+	while(conversione[static_cast<int>(car)][i] != '\0'){
+		BUFFER = BUFFER<<1;
+		if (conversione[static_cast<int>(car)][i++] == '1')
+			setlastbit(BUFFER);
+		l_buffer++;
+		if (l_buffer == 8){
+			f2<<BUFFER;
+			l_buffer = 0;
+			BUFFER = 0;
+			}
+		}
+}
 
 
-	
-	/**for(int j=0; j< 2*(n_caratteri-1); j++)
-		cout<<albero[j]<<" ";
-	cout<<endl;*/
-	
+
+/** Converte l'intero documento.
+ *
+ * La funzione scorre il file sorgente e grazie a
+ * ::scrivi_codice, carattere per carattere comprime
+ * il file.
+ */
+bool converti(ostream &f2, codice conversione, const char sorgente[], char &BUFFER, int &l_buffer){
+	ifstream f3 (sorgente);
+	if(!f3)
+		return false;
+	char car;
+	while(f3.read(reinterpret_cast<char *>(&car), sizeof (car)))
+		scrivi_codice (f2, conversione, car, BUFFER,l_buffer);
+	f3.close();
+	return true;
+
+}
+
+
+/** Inserisce il terminatore.
+ * Per segnalare la fine del documento è stato riservato
+ * un codice di terminazione. Esso si riferisce al carattere
+ * speciale della tabella ASCII di posizione 0 non utilizzato
+ * nei file di testo. Servirà in fase di decompressione per
+ * segnalare la fine del file.
+ */
+void inserisci_terminatore(ostream &f2, codice conversione,char &BUFFER, int &l_buffer){
+	scrivi_codice(f2,conversione,0,BUFFER, l_buffer);	
+}
+
+
+/** Compone il file compresso.
+ *
+ *La funzione si avvale di altre funzioni per creare tutte
+ * le parti necessarie al file compresso. Principalmente si
+ * occupa dell'apertura del flusso di scrittura su file che
+ * passa alle altre funzioni che creano pezzo per pezzo il
+ * file.
+ */
+bool scrivi_file(const char sorgente[], const char destinazione[], int n_caratteri, pnode root,codice conversione){
 	ofstream f2 (destinazione);
 	if (!f2)
 		return false;
@@ -421,10 +481,11 @@ bool scrivi_file(const char destinazione[], int n_caratteri, pnode root){
 	char BUFFER = 0;
 	int l_buffer = 0;
 	scrivi_albero(f2, root, n_caratteri, BUFFER, l_buffer);
-	
+	bool cont1 = converti(f2, conversione, sorgente, BUFFER, l_buffer);
+	inserisci_terminatore (f2, conversione, BUFFER, l_buffer);
 	svuota_buffer(f2, BUFFER, l_buffer);
 	f2.close();
-	return true;
+	return (cont1);
 
 }
 
@@ -449,21 +510,5 @@ bool comprimi (char sorgente[], char destinazione[]){
 	pnode root = crea_albero(coda); //mettere const?
 	codice conversione;
 	genera_codice(root,conversione,num_caratteri);
-	scrivi_file(destinazione, num_caratteri, root);
-	/*
-	//return(scrivi_file())
-	//DEBUG
-	cout<<"foglie:"<<endl;
-	DDD(root, true);
-	cout<<"interni:"<<endl;
-	DDD(root, false);
-	//FINE DEBUG
-	*/
-
-	
-/*pulisci_coda(coda); FATTO
-int num_caratteri=coda.n_elementi;
-crea_albero(coda);
-scrivi_file_compresso(destinazione, coda, num_caratteri); //contiene esplorazione dell'albero, scrittura del file compresso, etc..*/
-return true;
+	return(scrivi_file(sorgente, destinazione, num_caratteri, root, conversione));
 }
