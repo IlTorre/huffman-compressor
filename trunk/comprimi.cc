@@ -251,7 +251,11 @@ void controllo_colore (pnode x, const pnode root){
 }
 
 
-/**
+/** Assegna i codici ai caratteri.
+ *
+ * Quando esplorando l'albero incontriamo una foglia questa
+ * funzione viene chiamata e assegna il codice trovato fino a
+ * quel momento alla posizione del carattere trovato nella foglia.
  */
 void alloca(codice &conversione, char car, char buf[]){
 	int lun = strlen(buf)+1;
@@ -262,7 +266,8 @@ void alloca(codice &conversione, char car, char buf[]){
  
 /** Genera una matrice contenente i codici di conversione.
  *
- * 
+ * Esplora l'albero e tramite ::alloca assegna man mano tutti i
+ * codici ai rispettivi caratteri.
  */
 void genera_codice(const pnode &root, codice &conversione, const int num_caratteri){
 	char *buffer = new char [num_caratteri];
@@ -289,22 +294,11 @@ void genera_codice(const pnode &root, codice &conversione, const int num_caratte
 }
 
 
-
-/* PREAMBOLO 2
-while (i<n_caratteri){
-		if (x->left != NULL){
-			preambolo[++i] = '0';
-			x = x->left;
-			}
-		else {
-			preambolo[++i]='1';
-			}
-		}
-*/
-
-
-
-/**
+/** Funzione ricorsiva per la creazione del preambolo.
+ *
+ * La funzione si occupa di esplorare l'albero e di salvare
+ * le lettere presenti nelle foglie. Salva il risltato in un
+ * buffer.
  */
 void preambolo_ric(char preambolo[], pnode &x, int &i){
 	 if (x->left == NULL && x->right == NULL){
@@ -317,7 +311,14 @@ void preambolo_ric(char preambolo[], pnode &x, int &i){
 		preambolo_ric(preambolo,x->right,i);
  	
 }
-/**
+/** Crea il preambolo.
+ *
+ * La funzione crea il preambolo necessario per la decompressione
+ * futura del file. Il preambolo è composto da un byte che indica
+ * quante sono le lettere pressenti nel file più tutte le lettere
+ * in ordine da sinistra verso destra nell'albero.
+ * Questa configurazione permette al decompressore di ricostruire
+ * l'albero biario e di conseguenza il codice di decompressione.
  */
 void crea_preambolo(char preambolo[], pnode root, int n_caratteri){
 	preambolo[0] = static_cast<char>(n_caratteri);
@@ -327,16 +328,86 @@ void crea_preambolo(char preambolo[], pnode root, int n_caratteri){
 }
 
 
+/** Crea il codice identificativo dell'albero.
+ *
+ * Esplora l'albero in ordine e assegna FALSE per ogni ramo sinistro
+ * che incontra e TRUE per ogni ramo destro. Ottiene un codice
+ * univoco e identificativo della struttura dell'albero.
+ */
+void codice_albero(bool albero[], pnode p, int &i){
+	if (p != NULL){
+		if (p->left != NULL){
+			albero[i++] = false;
+			codice_albero(albero, p->left, i);
+			}
+		if (p->right != NULL){
+			albero[i++] = true;
+			codice_albero(albero, p->right, i);
+			}
+		}
+}
+
+
+/** Setta l'ultimo bit.
+ *
+ * La funzione prende in ingresso una maschera e ne setta l'ultimo bit.
+ */
+void setlastbit(char &MASK){
+MASK = MASK | 1;
+}
+
+
+/** Scrive il preambolo sul file.
+ *
+ * La funzione riceve in insgresso lo stream sul quale scrive il
+ * preambolo.
+ */
+void scrivi_preambolo(ostream f2, pnode root, int n_caratteri){
+	char preambolo[n_caratteri];
+	crea_preambolo(preambolo,root,n_caratteri);
+	for(int j=0;j<=n_caratteri;j++)
+		f2<<preambolo[j];
+}
+
+
+/**
+ */
+
+
+
 /**
  */
 bool scrivi_file(const char destinazione[], int n_caratteri, pnode root){
-	char preambolo[n_caratteri];
-	crea_preambolo(preambolo,root,n_caratteri);
+
+	bool albero[2*(n_caratteri-1)];
+	int i=0;
+	codice_albero(albero, root, i);
+	
+	/*for(int j=0; j< 2*(n_caratteri-1); j++)
+		cout<<albero[j]<<" ";
+	cout<<endl;*/
+	
 	ofstream f2 (destinazione);
 	if (!f2)
 		return false;
-	for(int j=0;j<n_caratteri;j++)
-		f2<<preambolo[j];
+	scrivi_preambolo(f2, root, n_caratteri);
+
+	
+	
+	char MASK = 0;
+	int controllo = 0;
+	for(int k=0;k<2*(n_caratteri-1);k++){
+		MASK = MASK<<1;
+		if (albero [k])
+			setlastbit(MASK);
+		controllo++;
+		if (controllo == 8){
+			f2<<MASK;
+			MASK = 0;
+			controllo = 0;
+			}
+	}
+	f2.close();
 	return true;
 
 /*
@@ -367,6 +438,7 @@ bool comprimi (char sorgente[], char destinazione[]){
 	codice conversione;
 	genera_codice(root,conversione,num_caratteri);
 	scrivi_file(destinazione, num_caratteri, root);
+	/*
 	//return(scrivi_file())
 	//DEBUG
 	cout<<"foglie:"<<endl;
@@ -374,7 +446,7 @@ bool comprimi (char sorgente[], char destinazione[]){
 	cout<<"interni:"<<endl;
 	DDD(root, false);
 	//FINE DEBUG
-	
+	*/
 
 	
 /*pulisci_coda(coda); FATTO
