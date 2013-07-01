@@ -27,6 +27,8 @@
 int main(){
 	char sorg[]="test.txt";
 	char dest[]="compresso.huf";
-	comprimi(sorg,dest);
-	return 0;
+	bool c1 = comprimi(sorg,dest);
+	char dec[]="decompresso.txt";
+	bool c2 = decomprimi (dest,dec);
+	return (static_cast<int>(c1 && c2));
 }

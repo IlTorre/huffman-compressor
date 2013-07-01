@@ -67,4 +67,4 @@ int n_elementi;
 
 /**
  */
-typedef char *codice [CARATTERI_ASCII-1];
+typedef unsigned char *codice [CARATTERI_ASCII-1];

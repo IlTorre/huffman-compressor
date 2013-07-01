@@ -260,10 +260,14 @@ void controllo_colore (pnode x, const pnode root){
  * funzione viene chiamata e assegna il codice trovato fino a
  * quel momento alla posizione del carattere trovato nella foglia.
  */
-void alloca(codice &conversione, unsigned char car, char buf[]){
-	int lun = strlen(buf)+1;
-	conversione[static_cast<int>(car)] = new char [lun];
-	strcpy(conversione[static_cast<int>(car)],buf);
+void alloca(codice &conversione, unsigned char car, unsigned char buf[]){
+	int lun = 0;
+	while (buf[lun]!='\0')
+		lun++;
+	lun++;
+	conversione[static_cast<int>(car)] = new unsigned char [lun];
+	for (int i=0; i<lun; i++)
+		conversione[static_cast<int>(car)][i]=buf[i];
 }
  
  
@@ -273,7 +277,7 @@ void alloca(codice &conversione, unsigned char car, char buf[]){
  * codici ai rispettivi caratteri.
  */
 void genera_codice(const pnode &root, codice &conversione, const int num_caratteri){
-	char *buffer = new char [num_caratteri];
+	unsigned char *buffer = new unsigned char [num_caratteri];
 	resetta_colori(root);
 	pnode x = root;
 	int i = 0;
@@ -355,7 +359,7 @@ void codice_albero(bool albero[], pnode p, int &i){
  *
  * La funzione prende in ingresso una maschera e ne setta l'ultimo bit.
  */
-void setlastbit(char &MASK){
+void setlastbit(unsigned char &MASK){
 MASK = MASK | 1;
 }
 
@@ -379,7 +383,7 @@ void scrivi_preambolo(ostream &f2, pnode root, int n_caratteri){
  * ottenuto nel file. Se rimangono bit sul buffer verranno
  * completati in seguito.
  */
-void scrivi_albero (ostream &f2, pnode root, int n_caratteri, char &BUFFER, int &l_buffer){
+void scrivi_albero (ostream &f2, pnode root, int n_caratteri, unsigned char &BUFFER, int &l_buffer){
 	bool albero[2*(n_caratteri-1)];
 	int i=0;
 	codice_albero(albero, root, i);
@@ -402,7 +406,7 @@ void scrivi_albero (ostream &f2, pnode root, int n_caratteri, char &BUFFER, int 
  * La funzione controlla se ci sono bit significativi nel
  * ::BUFFER e se presenti li scrive nel file.
  */
-void svuota_buffer(ostream &f2, char &BUFFER, int &l_buffer){
+void svuota_buffer(ostream &f2, unsigned char &BUFFER, int &l_buffer){
 	if (l_buffer > 0){
 		BUFFER = BUFFER<<(8-l_buffer);
 		f2<<BUFFER;
@@ -417,7 +421,7 @@ void svuota_buffer(ostream &f2, char &BUFFER, int &l_buffer){
  * La funzione riceve in input un caratere e scrive sul
  * flusso il codice relativo.
  */
-void scrivi_codice(ostream &f2, codice conversione, unsigned char car, char &BUFFER, int &l_buffer){
+void scrivi_codice(ostream &f2, codice conversione, unsigned char car, unsigned char &BUFFER, int &l_buffer){
 	int i=0;
 	while(conversione[static_cast<int>(car)][i] != '\0'){
 		BUFFER = BUFFER<<1;
@@ -440,7 +444,7 @@ void scrivi_codice(ostream &f2, codice conversione, unsigned char car, char &BUF
  * ::scrivi_codice, carattere per carattere comprime
  * il file.
  */
-bool converti(ostream &f2, codice conversione, const char sorgente[], char &BUFFER, int &l_buffer){
+bool converti(ostream &f2, codice conversione, const char sorgente[], unsigned char &BUFFER, int &l_buffer){
 	ifstream f3 (sorgente);
 	if(!f3)
 		return false;
@@ -460,7 +464,7 @@ bool converti(ostream &f2, codice conversione, const char sorgente[], char &BUFF
  * nei file di testo. Servirà in fase di decompressione per
  * segnalare la fine del file.
  */
-void inserisci_terminatore(ostream &f2, codice conversione,char &BUFFER, int &l_buffer){
+void inserisci_terminatore(ostream &f2, codice conversione,unsigned char &BUFFER, int &l_buffer){
 	scrivi_codice(f2,conversione,0,BUFFER, l_buffer);	
 }
 
@@ -479,7 +483,7 @@ bool scrivi_file(const char sorgente[], const char destinazione[], int n_caratte
 		return false;
 	
 	scrivi_preambolo(f2, root, n_caratteri);
-	char BUFFER = 0;
+	unsigned char BUFFER = 0;
 	int l_buffer = 0;
 	scrivi_albero(f2, root, n_caratteri, BUFFER, l_buffer);
 	bool cont1 = converti(f2, conversione, sorgente, BUFFER, l_buffer);
