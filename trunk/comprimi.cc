@@ -12,6 +12,9 @@
 void inizializza_coda(queue &coda){
 	for (int i=1; i<CARATTERI_ASCII;i++){
 		coda.elemento[i]=new nodo_t;
+		coda.elemento[i]->parent=NULL;
+		coda.elemento[i]->right=NULL;
+		coda.elemento[i]->left=NULL;
 		coda.elemento[i]->occorrenze=0;
 		coda.elemento[i]->carattere=static_cast<unsigned char>(i-1);
 		}
