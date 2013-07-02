@@ -357,7 +357,8 @@ void codice_albero(bool albero[], pnode p, int &i){
 
 /** Setta l'ultimo bit.
  *
- * La funzione prende in ingresso una maschera e ne setta l'ultimo bit.
+ * La funzione prende in ingresso una maschera e ne setta il bit
+ * meno significativo.
  */
 void setlastbit(unsigned char &MASK){
 MASK = MASK | 1;

@@ -126,7 +126,11 @@ pnode crea_albero (istream &f4, unsigned char &BUFFER, int &l_buffer){
 }
 
 
-/**
+/** Decodifica carattere per carattere.
+ *
+ * La funzione scorre i bit del file compresso e li trasforma
+ * grzie all'albero costruito precedentemente in caratteri che
+ * scrive sul file decompresso.
  */
 void decodifica(istream &f4,ostream &f5, unsigned char &BUFFER, int &l_buffer, pnode root){
 	pnode x = root;
