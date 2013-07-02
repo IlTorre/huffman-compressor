@@ -509,12 +509,22 @@ void DDD(const pnode p, bool foglie){
 }
 
 bool comprimi (char sorgente[], char destinazione[]){
+	D1(cout<<"-Inizio funzione comprimi, con sorgente = "<<sorgente<<" e destinazione = "<<destinazione<<endl);
 	queue coda;
+	D1(cout<<"-Chiamo inizializza_coda, gli passo coda"<<endl);
 	inizializza_coda(coda);
-	conta_occorrenze(sorgente, coda);
+	D1(cout<<"-Chiamo conta_occorrenze, gli passo sorgente = "<<sorgente<<" e coda"<<endl);
+	if (!conta_occorrenze(sorgente, coda))
+		return false;
+	D1(cout<<"-Chiamo pulisci_coda, gli passo coda"<<endl);
 	int num_caratteri = pulisci_coda(coda);
-	pnode root = crea_albero(coda); //mettere const?
+	D2(cout<<'\t'<<"-num_caratteri = "<<num_caratteri<<endl);
+	D1(cout<<"-Chiamo crea_albero, gli passo coda"<<endl);
+	pnode root = crea_albero(coda);
+	D2(cout<<'\t'<<"-Crea_albero ritorna la radice dell'albero"<<endl);
 	codice conversione;
+	D1(cout<<"-Chiamo genera_codice, gli passo root, conversione, num_caratteri = "<<num_caratteri<<endl);
 	genera_codice(root,conversione,num_caratteri);
+	D1(cout<<"-Chiamo scrivi_file, gli passo sorgente = "<<sorgente<<" destinazione = "<<destinazione<<" num_caratteri = "<<num_caratteri<<" root e conversione"<<endl);
 	return(scrivi_file(sorgente, destinazione, num_caratteri, root, conversione));
 }

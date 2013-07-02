@@ -6,6 +6,19 @@
 #include <iostream>
 using namespace std;
 
+#define DEBUG_MODE
+
+#ifdef DEBUG_MODE
+const unsigned int MASCHERA_DEBUG = 3;
+
+#define DBG(A, B) {if ((A) & MASCHERA_DEBUG) {B; } }
+#else
+#define DBG(A, B)
+#endif
+#define D1(a) DBG(1, a)
+#define D2(a) DBG(2, a)
+
+
 /** Stato di esplorazione.
  *
  * Indica lo stato di esplorazione del ::nodo_t come segue:
