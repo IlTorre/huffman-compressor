@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Compressore e decompressore di Huffman: Riferimenti per il file decomprimi.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Compressore e decompressore di Huffman
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Generato da Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funzioni</a>  </div>
+  <div class="headertitle">
+<div class="title">Riferimenti per il file decomprimi.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>File contenente l'interfaccia del modulo di Decompressione.  
+<a href="#details">Continua...</a></p>
+
+<p><a href="decomprimi_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8h.html#a51ca7751b472c835adaff4d47079c913">decomprimi</a> (char sorgente[], char destinazione[])</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione di Decompressione.  <a href="#a51ca7751b472c835adaff4d47079c913"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Descrizione dettagliata</h2>
+<div class="textblock"><p>File contenente l'interfaccia del modulo di Decompressione. </p>
+</div><hr/><h2>Documentazione delle funzioni</h2>
+<a class="anchor" id="a51ca7751b472c835adaff4d47079c913"></a><!-- doxytag: member="decomprimi.h::decomprimi" ref="a51ca7751b472c835adaff4d47079c913" args="(char sorgente[], char destinazione[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="decomprimi_8h.html#a51ca7751b472c835adaff4d47079c913">decomprimi</a> </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sorgente</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>destinazione</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Funzione di Decompressione. </p>
+<p>Questa funzione si occupa della decompressione del file. Riceve in input il percorso del file da decomprimere e il nome da dare al file decompresso; Restituisce un valore booleano che indica se l'operazione è andata a buon fine. </p>
+<div class="fragment"><pre class="fragment">                                                     {
+        ifstream f4(sorgente);
+        <span class="keywordflow">if</span> (!f4)
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> BUFFER = 0;
+        <span class="keywordtype">int</span> l_buffer = 0;
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> root = <a class="code" href="comprimi_8cc.html#a48e40d9996e8606503a0aa06f8b30ad8" title="Crea l&#39;albero di compressione.">crea_albero</a>(f4,BUFFER,l_buffer);
+        ofstream f5 (destinazione);
+        <span class="keywordflow">if</span> (!f5)
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        <a class="code" href="decomprimi_8cc.html#a58d990f91df90ccce1e6817dc4d17b64" title="Decodifica carattere per carattere.">decodifica</a> (f4, f5, BUFFER, l_buffer, root);
+        f4.close();
+        f5.close();
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+</div>
+</div>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Generato Mer 3 Lug 2013 15:17:47 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
