@@ -6,8 +6,6 @@
 #include <iostream>
 using namespace std;
 
-#define DEBUG_MODE
-
 #ifdef DEBUG_MODE
 const unsigned int MASCHERA_DEBUG = 3;
 
