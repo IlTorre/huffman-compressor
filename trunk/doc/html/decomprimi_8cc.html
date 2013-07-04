@@ -166,28 +166,33 @@ Funzioni</h2></td></tr>
 <p>Costruisce l'albero di decompressione. </p>
 <p>La funzione scorre il codice identificativo dell'albero generato da <a class="el" href="decomprimi_8cc.html#a451f085465772995b667f15799c3b8ef" title="Ricava il codice binario univoco dell&#39;albero.">leggi_albero</a> e lo ricostruisce. La funzione ritorna un puntatore alla radice. </p>
 <div class="fragment"><pre class="fragment">                                                                                         {
-
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;sono entrato in costruisci_albero, caratteri = &quot;</span>&lt;&lt;caratteri&lt;&lt;<span class="stringliteral">&quot; l_albero = &quot;</span>&lt;&lt;l_albero&lt;&lt;endl);
         <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> root = <a class="code" href="decomprimi_8cc.html#ade26de318714cc0e2901a4128c79d9cf" title="Crea un nodo non inizializzato.">crea_nodo</a>();
         <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = root;
         <span class="keywordtype">int</span> conta_car = 0;
         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i&lt;l_albero; i++){
+                <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;albero [&quot;</span>&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;] = &quot;</span>&lt;&lt;albero[i]&lt;&lt;endl);
                 <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> temp = <a class="code" href="decomprimi_8cc.html#ade26de318714cc0e2901a4128c79d9cf" title="Crea un nodo non inizializzato.">crea_nodo</a>();
                 <span class="keywordflow">if</span> (!albero[i]){
+                        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;lo inserisco come figlio sinistro&quot;</span>&lt;&lt;endl);
                         temp-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = x;
                         x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> = temp;
                         x = temp;
                         }
                 <span class="keywordflow">else</span>
                         <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> == NULL){
+                                <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;scrivo la lettera nella foglia e risalgo finchè non trovo un ramo destro libero&quot;</span>&lt;&lt;endl);
                                 x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> = caratteri[conta_car++];
                                 x=x-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>;
                                 <span class="keywordflow">while</span> (x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> != NULL)
                                         x = x-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>;
+                                <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;lo inserisco come figlio destro&quot;</span>&lt;&lt;endl);
                                 temp-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = x;
                                 x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> = temp;
                                 x = temp;
                                 }
                         <span class="keywordflow">else</span>{
+                                <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;lo inserisco come figlio destro&quot;</span>&lt;&lt;endl);
                                 temp-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = x;
                                 x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> = temp;
                                 x=temp;
@@ -233,6 +238,7 @@ Funzioni</h2></td></tr>
 <p>Crea l'albero di decompressione. </p>
 <p>Fornisce tutti gli elementi necessari per la creazione dell'albero alla funzione <a class="el" href="decomprimi_8cc.html#a8ab8827e29055d63848e3dc1b6d7cadd" title="Costruisce l&#39;albero di decompressione.">costruisci_albero</a>. Ritorna un puntatore alla radice dell'albero </p>
 <div class="fragment"><pre class="fragment">                                                                     {
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;sono entrato in crea_albero, BUFFER = &quot;</span>&lt;&lt;BUFFER&lt;&lt;<span class="stringliteral">&quot; l_buffer = &quot;</span>&lt;&lt;l_buffer&lt;&lt;endl);
         <span class="keywordtype">int</span> n_caratteri = <a class="code" href="decomprimi_8cc.html#a0a90cde8b4f5a78a62d0675e49933848" title="Ricava il numero dei caratteri.">numero_caratteri</a>(f4);
         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *caratteri = <a class="code" href="decomprimi_8cc.html#a4e3f07f4d3bc63db4a001f4cb2325c0c" title="Ricava i caratteri.">ricava_caratteri</a>(f4, n_caratteri);
         <span class="keywordtype">int</span> l_albero=2*(n_caratteri-1);
@@ -262,6 +268,7 @@ Funzioni</h2></td></tr>
 <p>Crea un nodo non inizializzato. </p>
 <p>La funzione alloca un nodo e inizializza a NULL i puntatori. Ritorna un puntatore al nuovo elemento creato. </p>
 <div class="fragment"><pre class="fragment">                  {
+        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;creo un nuovo nodo&quot;</span>&lt;&lt;endl);
         <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = <span class="keyword">new</span> <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">nodo_t</a>;
         x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> = NULL;
         x-&gt; left = NULL;
@@ -315,26 +322,38 @@ Funzioni</h2></td></tr>
 <div class="memdoc">
 
 <p>Decodifica carattere per carattere. </p>
-<p>La funzione scorre i bit del file compresso e li trasforma grzie all'albero costruito precedentemente in caratteri che scrive sul file decompresso. </p>
+<p>La funzione scorre i bit del file compresso e li trasforma grazie all'albero costruito precedentemente in caratteri che scrive sul file decompresso. </p>
 <div class="fragment"><pre class="fragment">                                                                                          {
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;sono entrato in scrivi_albero, BUFFER = &quot;</span>&lt;&lt;BUFFER&lt;&lt;<span class="stringliteral">&quot; l_buffer = &quot;</span>&lt;&lt;l_buffer&lt;&lt;endl);
         <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = root;
         <span class="keywordflow">while</span> (<span class="keyword">true</span>){
                 <span class="keywordflow">if</span> (l_buffer == 0){
+                        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;il buffer è vuoto, leggo un carattere dal file compresso&quot;</span>&lt;&lt;endl);
                         f4.read(reinterpret_cast&lt;char *&gt;(&amp;BUFFER), <span class="keyword">sizeof</span> (BUFFER));
                         l_buffer = 8;
                         }
                 <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> == NULL &amp;&amp; x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> == NULL){
-                        <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> == 0)
+                        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;ho trovato una foglia, quindi un carattere&quot;</span>&lt;&lt;endl);
+                        <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> == 0){
+                                <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;è il terminatore, fine&quot;</span>&lt;&lt;endl);
                                 <span class="keywordflow">return</span>;
+                                }
+                        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;scrivo sul file decompresso il carattere e riparto dalla radice&quot;</span>&lt;&lt;endl);
                         f5&lt;&lt;x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a>;
                         x = root;
                         }       
-                <span class="keywordflow">if</span>(!<a class="code" href="decomprimi_8cc.html#a9abfa751284a1ce1f91e1c26c8c1fe8b" title="Controlla se è settato il bit.">checkbit</a>(BUFFER))
+                <span class="keywordflow">if</span>(!<a class="code" href="decomprimi_8cc.html#a9abfa751284a1ce1f91e1c26c8c1fe8b" title="Controlla se è settato il bit.">checkbit</a>(BUFFER)){
+                        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;scendo sul figlio sinistro&quot;</span>&lt;&lt;endl);
                         x=x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>;
-                <span class="keywordflow">else</span>
+                        }
+                <span class="keywordflow">else</span>{
+                        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;scendo sul figlio destro&quot;</span>&lt;&lt;endl);
                         x=x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>;
+                        }
                 BUFFER = BUFFER&lt;&lt;1;     
                 l_buffer--;
+                <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="stringliteral">&quot;ho shiftato il buffer, ora vale &quot;</span>&lt;&lt;static_cast &lt;int&gt;(BUFFER)&lt;&lt;
+                <span class="stringliteral">&quot; e l_buffer vale &quot;</span>&lt;&lt;l_buffer&lt;&lt;endl);
                 }       
 }
 </pre></div>
@@ -368,6 +387,7 @@ Funzioni</h2></td></tr>
 <p>Funzione di Decompressione. </p>
 <p>Questa funzione si occupa della decompressione del file. Riceve in input il percorso del file da decomprimere e il nome da dare al file decompresso; Restituisce un valore booleano che indica se l'operazione è andata a buon fine. </p>
 <div class="fragment"><pre class="fragment">                                                     {
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;sono entrato in decomprimi, sorgente = &quot;</span>&lt;&lt;sorgente&lt;&lt;<span class="stringliteral">&quot; destinazione = &quot;</span>&lt;&lt;destinazione&lt;&lt;endl);
         ifstream f4(sorgente);
         <span class="keywordflow">if</span> (!f4)
                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -426,6 +446,8 @@ Funzioni</h2></td></tr>
 <p>Ricava il codice binario univoco dell'albero. </p>
 <p>Legge dal file il codice binario che identifica l'albero. </p>
 <div class="fragment"><pre class="fragment">                                                                                     {
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;sono entrato in leggi_albero, BUFFER = &quot;</span>&lt;&lt;BUFFER&lt;&lt;<span class="stringliteral">&quot; l_buffer = &quot;</span>&lt;&lt;
+        l_buffer&lt;&lt;<span class="stringliteral">&quot; l_albero = &quot;</span>&lt;&lt;l_albero&lt;&lt;endl);
         <span class="keywordtype">bool</span> *albero = <span class="keyword">new</span> <span class="keywordtype">bool</span> [l_albero];
         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i&lt;l_albero; i++){
                 <span class="keywordflow">if</span> (l_buffer == 0){
@@ -459,6 +481,7 @@ Funzioni</h2></td></tr>
 <p>Ricava il numero dei caratteri. </p>
 <p>La funzione legge dal file sorgente il primo byte e lo associa al numero di caratteri diversi presenti nel file originale. </p>
 <div class="fragment"><pre class="fragment">                                 {
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;sono entrato in numero_caratteri&quot;</span>&lt;&lt;endl);
         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> car;
         f4.read(reinterpret_cast&lt;char *&gt;(&amp;car), <span class="keyword">sizeof</span> (car));
         <span class="keywordflow">return</span> (static_cast&lt;int&gt;(car));
@@ -494,6 +517,7 @@ Funzioni</h2></td></tr>
 <p>Ricava i caratteri. </p>
 <p>La funzione legge dal file sorgente i caratteri presenti nel file originale. </p>
 <div class="fragment"><pre class="fragment">                                                              {
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;sono entrato in ricava_caratteri, n_caratteri = &quot;</span>&lt;&lt;n_caratteri&lt;&lt;endl);
         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *car = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> [n_caratteri];
         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;n_caratteri;i++)
                 f4.read(reinterpret_cast&lt;char *&gt;(&amp;car[i]), sizeof (car[i]));
@@ -520,7 +544,7 @@ Funzioni</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generato Gio 4 Lug 2013 10:16:16 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Gio 4 Lug 2013 16:51:00 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

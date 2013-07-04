@@ -10,6 +10,7 @@
  * La funzione inoltre azzera tutte le occorrenze
  */
 void inizializza_coda(queue &coda){
+	D1(cout<<"sono entrato in inizializza_coda"<<endl);
 	for (int i=1; i<CARATTERI_ASCII;i++){
 		coda.elemento[i]=new nodo_t;
 		coda.elemento[i]->parent=NULL;
@@ -29,6 +30,7 @@ void inizializza_coda(queue &coda){
  * l'operazione è andata a buon fine.
  */
 bool conta_occorrenze(char sorgente[], queue &coda){
+	D1(cout<<"sono entrato in conta_occorrenze con sorgente= "<<sorgente<<endl);
 	unsigned char car;
 	ifstream f (sorgente);
 	if (!f) 
@@ -37,6 +39,7 @@ bool conta_occorrenze(char sorgente[], queue &coda){
 		coda.elemento[static_cast<int>(car)+1]->occorrenze++;
 	coda.n_elementi=CARATTERI_ASCII-1;
 	f.close();
+	D2(cout<<"metto in coda il terminatore, occorrenze = 1"<<endl);
 	coda.elemento[1]->occorrenze++;
 	return true;
 }
@@ -47,6 +50,7 @@ bool conta_occorrenze(char sorgente[], queue &coda){
  * La funzione prende in ingresso due puntatori e li scambia.
  */
 void scambio(pnode &a,pnode &b){
+	D2(cout<<"scambio "<<a->carattere<<" e "<<b->carattere<<endl);
 	pnode p=a;
 	a=b;
 	b=p;
@@ -61,6 +65,7 @@ void scambio(pnode &a,pnode &b){
  * uno scambio (tra padre e figlio).
  */
 void MinHeapify(queue &coda, int j, int n){
+	D2(cout<<"MinHeapify (elemento "<<j<<", n_elementi = "<<n<<")"<<endl);
 	int k=j;
 	if ((2*j+1<=n) && (coda.elemento[2*j+1]->occorrenze<coda.elemento[k]->occorrenze))
 		k=2*j+1;
@@ -83,6 +88,7 @@ void MinHeapify(queue &coda, int j, int n){
  * funzione ::MinHeapify.
  */
 void BuildMinHeap(queue &coda){
+	D1(cout<<"sono entrato in BuildMinHeap"<<endl);
 	for (int i=coda.n_elementi/2;i>=1;i--)
 		MinHeapify(coda,i,coda.n_elementi);
 }
@@ -94,6 +100,7 @@ void BuildMinHeap(queue &coda){
  * decrescente utilizzando un Heap. (Heap Sort).
  */
 void HeapSort(queue &coda){
+	D1(cout<<"sono entrato in HeapSort"<<endl);
 	for (int i=coda.n_elementi;i>1;i--){
 		scambio(coda.elemento[1],coda.elemento[i]);
 		MinHeapify(coda,1,i-1);
@@ -109,6 +116,7 @@ void HeapSort(queue &coda){
  * proprietà di Heap.
  */
 void RestoreHeap(queue &coda, int pos){
+	D2(cout<<"chiamo RestoreHeap sulla posizione "<<pos<<endl);
 	while (pos>1 && coda.elemento[pos]->occorrenze<coda.elemento[pos/2]->occorrenze){
 		scambio(coda.elemento[pos],coda.elemento[pos/2]);
 		pos=pos/2;
@@ -123,6 +131,7 @@ void RestoreHeap(queue &coda, int pos){
  * Restituisce un min Heap e il numero di caratteri presenti.
  */
 int pulisci_coda(queue &coda){
+	D1(cout<<"sono entrato in pulisci_coda"<<endl);
 	BuildMinHeap(coda);
 	HeapSort(coda);
 	while(coda.elemento[coda.n_elementi]->occorrenze==0){
@@ -142,6 +151,7 @@ int pulisci_coda(queue &coda){
  * risalire fino alla posizione corretta nello Heap.
  */
 void enqueue(queue &coda, pnode x){
+	D2(cout<<"inseriesco un nodo in coda"<<endl);
 	coda.elemento[++coda.n_elementi]=x;
 	RestoreHeap(coda,coda.n_elementi);
 }
@@ -153,6 +163,7 @@ void enqueue(queue &coda, pnode x){
  * ritornando un puntatore al nodo se la coda non è vuota.
  */
 pnode dequeue(queue &coda){
+	D2(cout<<"estraggo dalla coda"<<endl);
 	if (coda.n_elementi<=0) 
 		return NULL;
 	pnode x= coda.elemento[1];
@@ -161,7 +172,6 @@ pnode dequeue(queue &coda){
 	if (coda.n_elementi>1)
 		MinHeapify(coda,1,coda.n_elementi);
 	return x;
-BuildMinHeap(coda);
 }
  
 
@@ -172,6 +182,7 @@ BuildMinHeap(coda);
  * dei puntatori degli elementi passati.
  */
 void aggancia (pnode &p, pnode &l, pnode &r){
+	D2(cout<<"aggancio i nodi"<<endl);
 	l->parent = p;
 	r->parent = p;
 	p->left = l;
@@ -185,6 +196,7 @@ void aggancia (pnode &p, pnode &l, pnode &r){
  * puntatore all'oggetto creato.
  */
 pnode unisci_nodi(pnode &x, pnode &y){
+	D2(cout<<"creo il padre e ci attacco i 2 figli"<<endl);
 	pnode p = new nodo_t;
 	p->carattere=-1;
 	p->occorrenze = x->occorrenze + y->occorrenze;
@@ -203,6 +215,7 @@ pnode unisci_nodi(pnode &x, pnode &y){
  * la coda.
  */
 pnode crea_albero(queue &coda){
+	D1(cout<<"sono entrato in crea_albero"<<endl);
 	while (coda.n_elementi>1){
 		pnode x = dequeue (coda);
 		pnode y = dequeue (coda);
@@ -210,6 +223,7 @@ pnode crea_albero(queue &coda){
 		enqueue (coda,p);
 		}
 	pnode root = coda.elemento[1];
+	D2(cout<<"chiudo la coda"<<endl);
 	coda.n_elementi = 0;
 	return root;
 }
@@ -221,9 +235,11 @@ pnode crea_albero(queue &coda){
  * a bianco tutti i nodi interni, solo le foglie a nero.
  */
 void resetta_colori(const pnode &root){
+	D2(cout<<"sono entrato in resetta_colori"<<endl);
 	pnode p = root;
 	if (p->left == NULL && p->right == NULL){
 		p->colore = nero;
+		D2(cout<<"trovata una foglia"<<endl);
 		return;
 		}
 	p->colore = bianco;
@@ -247,6 +263,7 @@ void resetta_colori(const pnode &root){
 *
 */
 void controllo_colore (pnode x, const pnode root){
+	D2(cout<<"controllo colore"<<endl);
 	if (x->colore == bianco)
 		x->colore = grigio;
 	else{
@@ -264,6 +281,7 @@ void controllo_colore (pnode x, const pnode root){
  * quel momento alla posizione del carattere trovato nella foglia.
  */
 void alloca(codice &conversione, unsigned char car, unsigned char buf[]){
+	D2(cout<<"alloco la stringa contenente il codice "<<buf<<" al carattere "<<car<<endl);
 	int lun = 0;
 	while (buf[lun]!='\0')
 		lun++;
@@ -280,20 +298,24 @@ void alloca(codice &conversione, unsigned char car, unsigned char buf[]){
  * codici ai rispettivi caratteri.
  */
 void genera_codice(const pnode &root, codice &conversione, const int num_caratteri){
+	D1(cout<<"sono entrato in genera_codice, num_caratteri= "<<num_caratteri<<endl);
 	unsigned char *buffer = new unsigned char [num_caratteri];
 	resetta_colori(root);
 	pnode x = root;
 	int i = 0;
 	while(root->colore != nero){
 		if (x->colore == bianco){
+			D2(cout<<"elemento bianco: scrivo 0 e scendo sul figlio sinistro"<<endl);
 			buffer[i++]='0';
 			x=x->left;
 			}
 		if (x->colore == grigio){
+			D2(cout<<"elemento grigio: scrivo 1 e scendo sul figlio destro"<<endl);
 			buffer[i++]='1';
 			x=x->right;
 			}
 		if (x->colore == nero){
+			D2(cout<<"elemento nero: inserisco il carattere di terminazione e riparto dalla radice"<<endl);
 			buffer[i] = '\0';
 			alloca(conversione, x->carattere, buffer);
 			controllo_colore(x->parent, root);
@@ -311,7 +333,7 @@ void genera_codice(const pnode &root, codice &conversione, const int num_caratte
  * buffer.
  */
 void preambolo_ric(unsigned char preambolo[], pnode &x, int &i){
-	 if (x->left == NULL && x->right == NULL){
+	if (x->left == NULL && x->right == NULL){
  		preambolo[i++] = x->carattere;
  		return;
  		}
@@ -331,6 +353,7 @@ void preambolo_ric(unsigned char preambolo[], pnode &x, int &i){
  * l'albero biario e di conseguenza il codice di decompressione.
  */
 void crea_preambolo(unsigned char preambolo[], pnode root, int n_caratteri){
+	D1(cout<<"sono entrato in crea_preambolo, preambolo = "<<preambolo<<" n_caratteri = "<<n_caratteri<<endl);
 	preambolo[0] = static_cast<unsigned char>(n_caratteri);
 	int i = 1;
 	pnode x = root;
@@ -374,6 +397,7 @@ MASK = MASK | 1;
  * preambolo.
  */
 void scrivi_preambolo(ostream &f2, pnode root, int n_caratteri){
+	D1(cout<<"sono entrato in scrivi_preambolo, n_caratteri = "<<n_caratteri<<endl);
 	unsigned char preambolo[n_caratteri];
 	crea_preambolo(preambolo,root,n_caratteri);
 	for(int j=0;j<=n_caratteri;j++)
@@ -388,6 +412,8 @@ void scrivi_preambolo(ostream &f2, pnode root, int n_caratteri){
  * completati in seguito.
  */
 void scrivi_albero (ostream &f2, pnode root, int n_caratteri, unsigned char &BUFFER, int &l_buffer){
+	D1(cout<<"sono entrato in scrivi_albero, n_caratteri = "<<n_caratteri<<
+	" BUFFER = "<<BUFFER<<" l_buffer = "<<l_buffer<<endl);
 	bool albero[2*(n_caratteri-1)];
 	int i=0;
 	codice_albero(albero, root, i);
@@ -411,6 +437,7 @@ void scrivi_albero (ostream &f2, pnode root, int n_caratteri, unsigned char &BUF
  * ::BUFFER e se presenti li scrive nel file.
  */
 void svuota_buffer(ostream &f2, unsigned char &BUFFER, int &l_buffer){
+	D2(cout<<"svuoto il buffer"<<endl);
 	if (l_buffer > 0){
 		BUFFER = BUFFER<<(8-l_buffer);
 		f2<<BUFFER;
@@ -426,6 +453,8 @@ void svuota_buffer(ostream &f2, unsigned char &BUFFER, int &l_buffer){
  * flusso il codice relativo.
  */
 void scrivi_codice(ostream &f2, codice conversione, unsigned char car, unsigned char &BUFFER, int &l_buffer){
+	D2(cout<<"sono entrato in scrivi_codice, car = "<<car<<" BUFFER = "<<
+	BUFFER<<" l_buffer = "<<l_buffer<<endl);
 	int i=0;
 	while(conversione[static_cast<int>(car)][i] != '\0'){
 		BUFFER = BUFFER<<1;
@@ -449,6 +478,8 @@ void scrivi_codice(ostream &f2, codice conversione, unsigned char car, unsigned 
  * il file.
  */
 bool converti(ostream &f2, codice conversione, const char sorgente[], unsigned char &BUFFER, int &l_buffer){
+	D1(cout<<"sono entrato in converti, sorgente = "<<sorgente<<
+	" BUFFER = "<<BUFFER<<" l_buffer = "<<l_buffer<<endl);
 	ifstream f3 (sorgente);
 	if(!f3)
 		return false;
@@ -469,6 +500,7 @@ bool converti(ostream &f2, codice conversione, const char sorgente[], unsigned c
  * segnalare la fine del file.
  */
 void inserisci_terminatore(ostream &f2, codice conversione,unsigned char &BUFFER, int &l_buffer){
+	D1(cout<<"sono entrato in inserisci_terminatore, BUFFER = "<<BUFFER<<" l_buffer = "<<l_buffer<<endl);
 	scrivi_codice(f2,conversione,0,BUFFER, l_buffer);	
 }
 
@@ -482,6 +514,8 @@ void inserisci_terminatore(ostream &f2, codice conversione,unsigned char &BUFFER
  * file.
  */
 bool scrivi_file(const char sorgente[], const char destinazione[], int n_caratteri, pnode root,codice conversione){
+	D1(cout<<"sono entrato in scrivi_file, sorgente = "<<sorgente<<
+	" destinazione = "<<destinazione<<" n_caratteri = "<<n_caratteri<<endl);
 	ofstream f2 (destinazione);
 	if (!f2)
 		return false;
@@ -498,36 +532,15 @@ bool scrivi_file(const char sorgente[], const char destinazione[], int n_caratte
 
 }
 
-
-//DEBUG
-void DDD(const pnode p, bool foglie){
-	if (p != NULL){
-		DDD(p->left, foglie);
-		if (foglie && p->carattere != -1)
-			cout<<p->colore<<endl;
-		if (!foglie && p->carattere == -1)
-			cout<<p->colore<<endl;
-		DDD(p->right, foglie);
-		}
-}
-
 bool comprimi (char sorgente[], char destinazione[]){
-	D1(cout<<"-Inizio funzione comprimi, con sorgente = "<<sorgente<<" e destinazione = "<<destinazione<<endl);
+	D1(cout<<"Inizio funzione comprimi, con sorgente = "<<sorgente<<" e destinazione = "<<destinazione<<endl);
 	queue coda;
-	D1(cout<<"-Chiamo inizializza_coda, gli passo coda"<<endl);
 	inizializza_coda(coda);
-	D1(cout<<"-Chiamo conta_occorrenze, gli passo sorgente = "<<sorgente<<" e coda"<<endl);
 	if (!conta_occorrenze(sorgente, coda))
 		return false;
-	D1(cout<<"-Chiamo pulisci_coda, gli passo coda"<<endl);
 	int num_caratteri = pulisci_coda(coda);
-	D2(cout<<'\t'<<"-num_caratteri = "<<num_caratteri<<endl);
-	D1(cout<<"-Chiamo crea_albero, gli passo coda"<<endl);
 	pnode root = crea_albero(coda);
-	D2(cout<<'\t'<<"-Crea_albero ritorna la radice dell'albero"<<endl);
 	codice conversione;
-	D1(cout<<"-Chiamo genera_codice, gli passo root, conversione, num_caratteri = "<<num_caratteri<<endl);
 	genera_codice(root,conversione,num_caratteri);
-	D1(cout<<"-Chiamo scrivi_file, gli passo sorgente = "<<sorgente<<" destinazione = "<<destinazione<<" num_caratteri = "<<num_caratteri<<" root e conversione"<<endl);
 	return(scrivi_file(sorgente, destinazione, num_caratteri, root, conversione));
 }
