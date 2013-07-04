@@ -86,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <code>#include &lt;gtk/gtk.h&gt;</code><br/>
 <code>#include &lt;cstring&gt;</code><br/>
 <code>#include &lt;sstream&gt;</code><br/>
+<code>#include &lt;cstdlib&gt;</code><br/>
 <code>#include &quot;<a class="el" href="struttura__dati_8h_source.html">struttura_dati.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="comprimi_8h_source.html">comprimi.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="decomprimi_8h_source.html">decomprimi.h</a>&quot;</code><br/>
@@ -93,15 +94,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Funzioni</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Huffman_8cc.html#a25880d9d561c0b54301ba567d445c40f">hide_main_window</a> (GtkButton *button, gpointer data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Segnale che chiude la finestra in cui si trova il pulsante premuto.  <a href="#a25880d9d561c0b54301ba567d445c40f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chiude la finestra aperta.  <a href="#a25880d9d561c0b54301ba567d445c40f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Huffman_8cc.html#a60067450966ffe729e2a3d5d1a8ad61e">handler_comprimi</a> (GtkButton *button, gpointer data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">segnale che gestisce l'evento click del pulsante comprimi apre la finestra di dialogo adibita al salvataggio  <a href="#a60067450966ffe729e2a3d5d1a8ad61e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Segnale del bottone compressore.  <a href="#a60067450966ffe729e2a3d5d1a8ad61e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Huffman_8cc.html#a6928b9a981906b8dd5582608d5c9192f">handler_decomprimi</a> (GtkButton *button, gpointer data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">segnale che gestisce l'evento click del pulsante decomprimi questo segnale apre un finestra di dialogo dove poter salvare e dare un nome al file che si crea con le decompressione controlla inoltre che l'utente abbia selezionato un file .huf per da decomprimere  <a href="#a6928b9a981906b8dd5582608d5c9192f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Segnale del bottone decompressore.  <a href="#a6928b9a981906b8dd5582608d5c9192f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Huffman_8cc.html#a13f4d10adeddb278e464791fb5086cf6">handler_scegli_op</a> (GtkButton *button, gpointer data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">segnale paragonbile a un front-end permette di decidere quale operazione eseguire se la compressione o la decompressione del file  <a href="#a13f4d10adeddb278e464791fb5086cf6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sceglie l'operazione da eseguire.  <a href="#a13f4d10adeddb278e464791fb5086cf6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Huffman_8cc.html#a6b54ebb4c3a525965810aa404a9e6b3a">handler_carica_documentazione</a> (GtkMenuItem *item, gpointer data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">link alla documentazione  <a href="#a6b54ebb4c3a525965810aa404a9e6b3a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Link alla documentazione.  <a href="#a6b54ebb4c3a525965810aa404a9e6b3a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Huffman_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variabili</h2></td></tr>
@@ -133,9 +134,10 @@ Variabili</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>link alla documentazione </p>
-<div class="fragment"><pre class="fragment">{
-        <span class="comment">//system(&quot;firefox </span>
+<p>Link alla documentazione. </p>
+<p>Permette di aprire una pagina di Firefox con la relativa documentazione in formato HTML. </p>
+<div class="fragment"><pre class="fragment">                                                                              {
+        system(<span class="stringliteral">&quot;firefox ../doc/html/index.html&quot;</span>);
 }
 </pre></div>
 </div>
@@ -165,17 +167,16 @@ Variabili</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>segnale che gestisce l'evento click del pulsante comprimi apre la finestra di dialogo adibita al salvataggio </p>
-<div class="fragment"><pre class="fragment">{       
+<p>Segnale del bottone compressore. </p>
+<p>Segnale che gestisce l'evento click del pulsante compressore: apre la finestra di dialogo adibita al salvataggio del file compresso, ricava il percorso di salvataggio e comunica lo stato dell'operazione. </p>
+<div class="fragment"><pre class="fragment">                                                                 {      
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;mex_esegui&quot;</span>)),<span class="stringliteral">&quot;Comprimi&quot;</span>);
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;scegli dove salvare e il nome del file compresso&quot;</span>);
-        
         gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
-        <span class="keywordflow">if</span>(sorg==NULL)
-        {               
+        <span class="keywordflow">if</span>(sorg==NULL){         
                 mostra_messaggi(<span class="keyword">false</span>,1);
                 <span class="keywordflow">return</span>;
-        }
+                }
         GtkWidget *salvataggio=GTK_WIDGET(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;salva&quot;</span>));
         gtk_widget_show_all(salvataggio);
 }
@@ -207,17 +208,16 @@ Variabili</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>segnale che gestisce l'evento click del pulsante decomprimi questo segnale apre un finestra di dialogo dove poter salvare e dare un nome al file che si crea con le decompressione controlla inoltre che l'utente abbia selezionato un file .huf per da decomprimere </p>
-<div class="fragment"><pre class="fragment">{
+<p>Segnale del bottone decompressore. </p>
+<p>Segnale che gestisce l'evento click del pulsante decompressore: apre la finestra di dialogo adibita al salvataggio del file decompresso, ricava il percorso di salvataggio e comunica lo stato dell'operazione. </p>
+<div class="fragment"><pre class="fragment">                                                                   {
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;mex_esegui&quot;</span>)),<span class="stringliteral">&quot;Decomprimi&quot;</span>);
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;scegli dove salvare e il nome del file decompresso&quot;</span>);
-        
         gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
-        <span class="keywordflow">if</span>(sorg==NULL)
-        {               
+        <span class="keywordflow">if</span>(sorg==NULL){         
                 mostra_messaggi(<span class="keyword">false</span>,0);
                 <span class="keywordflow">return</span>;
-        }
+                }
         GtkWidget *salvataggio=GTK_WIDGET(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;salva&quot;</span>));
         gtk_widget_show_all(salvataggio);
 }
@@ -249,8 +249,9 @@ Variabili</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>segnale paragonbile a un front-end permette di decidere quale operazione eseguire se la compressione o la decompressione del file </p>
-<div class="fragment"><pre class="fragment">{
+<p>Sceglie l'operazione da eseguire. </p>
+<p>In base all'operazione scelta richiama la funzione corretta (::effettua_compressione o ::effettua_decompressione). Per sapere quale eseguire controlla lo stato della label del bottone nella finestra di salvataggio. </p>
+<div class="fragment"><pre class="fragment">                                                                  {
         GtkLabel *label=GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;mex_esegui&quot;</span>));
         <span class="keyword">const</span> <span class="keywordtype">char</span> *testo=gtk_label_get_text(label);
         <span class="keywordflow">if</span>(strcmp(testo,<span class="stringliteral">&quot;Comprimi&quot;</span>)==0)
@@ -286,8 +287,9 @@ Variabili</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Segnale che chiude la finestra in cui si trova il pulsante premuto. </p>
-<div class="fragment"><pre class="fragment">{
+<p>Chiude la finestra aperta. </p>
+<p>Segnale che chiude la finestra in cui viene premuto il pulsante. </p>
+<div class="fragment"><pre class="fragment">                                                                  {
         gtk_widget_hide(gtk_widget_get_toplevel(GTK_WIDGET(button)));
 }
 </pre></div>
@@ -317,43 +319,48 @@ Variabili</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>inizializzazione gtk</p>
-<p>aggiunga interfaccia grafica grafica.glade</p>
-<p>aggiunta dei filtri per la selzione dei file ai filechooser, i filtri sono stati creati tramite glade qui avviene solo il settaggio del relativo nome e l'aggangio dei filtri ai filechooser</p>
-<p>primo filtri riferito al chooser del compressore rende selezionabili solo i file con estensione .txt</p>
-<p>secondo filtro riferito al chooser del decompressore rende selezionabili solo i file con estensione .huf</p>
-<p>aggancio primo filtro</p>
-<p>agggancio secondo filtro</p>
-<p>conessione dei segnali con l'interfaccia</p>
-<p>loop principale </p>
 <div class="fragment"><pre class="fragment">                               {
 
 
+        <span class="comment">/* Inizializzazione gtk. */</span>
         gtk_init(&amp;argc,&amp;argv);
-        
         <a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>=gtk_builder_new();
         
+        
+        <span class="comment">/* Aggiunge l&#39;interfaccia grafica creata con Glade */</span>
         gtk_builder_add_from_file(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;grafica.glade&quot;</span>,NULL);
         
+        
+        <span class="comment">/* Creazione primo filtro.</span>
+<span class="comment">         * </span>
+<span class="comment">         * Ricava un puntatore al filtro creato con Glade e lo imposta per accettare i .txt .</span>
+<span class="comment">         * Ricava un puntatore al file_chooser e in seguito aggiunge il filtro al file_chooser.</span>
+<span class="comment">         */</span>
         GtkFileFilter *filtro=GTK_FILE_FILTER(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;filtro_file&quot;</span>));
         gtk_file_filter_set_name(filtro,<span class="stringliteral">&quot;.txt&quot;</span>);
-        
-        GtkFileFilter *filtro_dec=GTK_FILE_FILTER(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;filtro_file2&quot;</span>));
-        gtk_file_filter_set_name(filtro_dec,<span class="stringliteral">&quot;*.huf&quot;</span>);
-        
         GtkFileChooser *chooser=GTK_FILE_CHOOSER(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;chooser_compressore&quot;</span>));
         gtk_file_chooser_add_filter(chooser,filtro);
         
+        
+        <span class="comment">/* Creazione secondo filtro.</span>
+<span class="comment">         * </span>
+<span class="comment">         * Ricava un puntatore al filtro creato con Glade e lo imposta per accettare i .huf .</span>
+<span class="comment">         * Ricava un puntatore al file_chooser e in seguito aggiunge il filtro al file_chooser.</span>
+<span class="comment">         */</span>
+        GtkFileFilter *filtro_dec=GTK_FILE_FILTER(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;filtro_file2&quot;</span>));
+        gtk_file_filter_set_name(filtro_dec,<span class="stringliteral">&quot;*.huf&quot;</span>);
         GtkFileChooser *chooser_dec=GTK_FILE_CHOOSER(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;chooser_decompressore&quot;</span>));
         gtk_file_chooser_add_filter(chooser_dec,filtro_dec);
         
         
+        <span class="comment">/* Connessione dei segnali con l&#39;interfaccia */</span>
         gtk_builder_connect_signals(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,NULL);
         
+        
+        <span class="comment">/* Loop principale */</span>
         gtk_main();
 
         <span class="keywordflow">return</span> 0;
-        <span class="comment">//return (static_cast&lt;int&gt;(c1 &amp;&amp; c2));</span>
 }
 </pre></div>
 </div>
@@ -390,7 +397,7 @@ Variabili</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generato Gio 4 Lug 2013 10:16:16 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Gio 4 Lug 2013 16:51:00 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

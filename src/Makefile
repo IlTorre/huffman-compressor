@@ -8,7 +8,7 @@ Huffman: $(OBJ)
 
 -include dependencies
 
-.PHONY: depend clean cleanall
+.PHONY: depend clean cleanall doc
 
 depend:
 	g++ -MM *.cc > dependencies
@@ -16,3 +16,5 @@ clean:
 	rm *.o
 cleanall:
 	rm Huffman *.o *~
+doc:
+	doxygen
