@@ -1,0 +1,1425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Compressore e decompressore di Huffman: Riferimenti per il file comprimi.cc</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Compressore e decompressore di Huffman
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Generato da Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funzioni</a>  </div>
+  <div class="headertitle">
+<div class="title">Riferimenti per il file comprimi.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;fstream&gt;</code><br/>
+<code>#include &lt;cstring&gt;</code><br/>
+<code>#include &quot;<a class="el" href="struttura__dati_8h_source.html">struttura_dati.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a4a9a180bcd16390b353b6f3dc724a98d">inizializza_coda</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializzazione della coda.  <a href="#a4a9a180bcd16390b353b6f3dc724a98d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#aafedd75a37b4fb078be65fec9fa899b6">conta_occorrenze</a> (char sorgente[], <a class="el" href="structqueue.html">queue</a> &amp;coda)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Conta le occorrenze di ogni lettera.  <a href="#aafedd75a37b4fb078be65fec9fa899b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#aa3bdb5be98afb1d72a73de21d21cee4c">scambio</a> (<a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;a, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scambia due nodi.  <a href="#aa3bdb5be98afb1d72a73de21d21cee4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#ab459ac8eea28c8673e880c254144bc9b">MinHeapify</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda, int j, int n)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Applica le proprietà di Heap a un nodo.  <a href="#ab459ac8eea28c8673e880c254144bc9b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#ad3216cf1787ef33d8516e00587199238">BuildMinHeap</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruzione di un Min-Heap.  <a href="#ad3216cf1787ef33d8516e00587199238"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a8f9dc2e4a03e49768ad4ca4cbe164eb6">HeapSort</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordinamento decrescente.  <a href="#a8f9dc2e4a03e49768ad4ca4cbe164eb6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a7fa56c288846ab264e02cecde1f42cf6">RestoreHeap</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda, int pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ristabilisce l'Heap dopo l'inserimento.  <a href="#a7fa56c288846ab264e02cecde1f42cf6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a906a1aca9b2f6b1398ae23ef220c44b8">pulisci_coda</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina i caratteri non presenti nel file.  <a href="#a906a1aca9b2f6b1398ae23ef220c44b8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a958999b2187667bc127694dd497b7793">enqueue</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> x)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce un elemento in coda.  <a href="#a958999b2187667bc127694dd497b7793"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#aadb209fd0b3b245a5a158829acdea165">dequeue</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrae un elemento dalla coda.  <a href="#aadb209fd0b3b245a5a158829acdea165"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a4f13ccb60328da9b1de70dbe8384ac85">aggancia</a> (<a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;p, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;l, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;r)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggancia padre e figli.  <a href="#a4f13ccb60328da9b1de70dbe8384ac85"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a4789dfca63932900f98a0a1e033a021b">unisci_nodi</a> (<a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;x, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;y)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unisce due nodi.  <a href="#a4789dfca63932900f98a0a1e033a021b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a48e40d9996e8606503a0aa06f8b30ad8">crea_albero</a> (<a class="el" href="structqueue.html">queue</a> &amp;coda)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea l'albero di compressione.  <a href="#a48e40d9996e8606503a0aa06f8b30ad8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#ad57ea5c0a245068c18c55cacf5819489">resetta_colori</a> (const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;root)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetta i colori dei nodi.  <a href="#ad57ea5c0a245068c18c55cacf5819489"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a70ea44ad36568f0d848f9542cffeb691">controllo_colore</a> (<a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> x, const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> root)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sistema i colori dei nodi.  <a href="#a70ea44ad36568f0d848f9542cffeb691"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a4c9c294d4b3a0c708d4a2949e10704e3">alloca</a> (<a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> &amp;conversione, unsigned char car, unsigned char buf[])</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assegna i codici ai caratteri.  <a href="#a4c9c294d4b3a0c708d4a2949e10704e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a57d4dc6640b04319864411b7a182e028">genera_codice</a> (const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;root, <a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> &amp;conversione, const int num_caratteri)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera una matrice contenente i codici di conversione.  <a href="#a57d4dc6640b04319864411b7a182e028"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a0dd1312d1f20daeec302079395f11f49">preambolo_ric</a> (unsigned char preambolo[], <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;x, int &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione ricorsiva per la creazione del preambolo.  <a href="#a0dd1312d1f20daeec302079395f11f49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a1e65594bacfcdda215298933450ec1a4">crea_preambolo</a> (unsigned char preambolo[], <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> root, int n_caratteri)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea il preambolo.  <a href="#a1e65594bacfcdda215298933450ec1a4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#af5128863f948581e5497fed53df27339">codice_albero</a> (bool albero[], <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> p, int &amp;i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea il codice identificativo dell'albero.  <a href="#af5128863f948581e5497fed53df27339"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#aa9c51e327e897f482650207e6946df05">setlastbit</a> (unsigned char &amp;MASK)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Setta l'ultimo bit.  <a href="#aa9c51e327e897f482650207e6946df05"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a2241ac2e0dbb102ecdfae65d77376f78">scrivi_preambolo</a> (ostream &amp;f2, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> root, int n_caratteri)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scrive il preambolo sul file.  <a href="#a2241ac2e0dbb102ecdfae65d77376f78"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a1ec34bc049766f05a85197fa2457dd1e">scrivi_albero</a> (ostream &amp;f2, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> root, int n_caratteri, unsigned char &amp;BUFFER, int &amp;l_buffer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scrive il codice identificativo dell'albero sul file.  <a href="#a1ec34bc049766f05a85197fa2457dd1e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a12904a37d41b12bca95d960e6783db68">svuota_buffer</a> (ostream &amp;f2, unsigned char &amp;BUFFER, int &amp;l_buffer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Svuota il buffer.  <a href="#a12904a37d41b12bca95d960e6783db68"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a6fbdc2f21993c5d60eda4422e31366fb">scrivi_codice</a> (ostream &amp;f2, <a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> conversione, unsigned char car, unsigned char &amp;BUFFER, int &amp;l_buffer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Scrive il codice di un dato carattere.  <a href="#a6fbdc2f21993c5d60eda4422e31366fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a5c4893649c04931b57bf2850acdaaa2a">converti</a> (ostream &amp;f2, <a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> conversione, const char sorgente[], unsigned char &amp;BUFFER, int &amp;l_buffer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converte l'intero documento.  <a href="#a5c4893649c04931b57bf2850acdaaa2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#a21cb4873729513741752a7b6b988746f">inserisci_terminatore</a> (ostream &amp;f2, <a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> conversione, unsigned char &amp;BUFFER, int &amp;l_buffer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce il terminatore.  <a href="#a21cb4873729513741752a7b6b988746f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#adb559e276d4d3a0100e4a3d57eee9cb2">scrivi_file</a> (const char sorgente[], const char destinazione[], int n_caratteri, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> root, <a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> conversione)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compone il file compresso.  <a href="#adb559e276d4d3a0100e4a3d57eee9cb2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#ab45a082141b2515ea2cd76a1192d894d">DDD</a> (const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> p, bool foglie)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comprimi_8cc.html#afe6eaad2795725afd370b8868fd69cac">comprimi</a> (char sorgente[], char destinazione[])</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione di Compressione.  <a href="#afe6eaad2795725afd370b8868fd69cac"></a><br/></td></tr>
+</table>
+<hr/><h2>Documentazione delle funzioni</h2>
+<a class="anchor" id="a4f13ccb60328da9b1de70dbe8384ac85"></a><!-- doxytag: member="comprimi.cc::aggancia" ref="a4f13ccb60328da9b1de70dbe8384ac85" args="(pnode &amp;p, pnode &amp;l, pnode &amp;r)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a4f13ccb60328da9b1de70dbe8384ac85">aggancia</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Aggancia padre e figli. </p>
+<p>La funzione riceve in ingresso tre puntatori. Il primo prende come figli gli altri due. La funzione si limita all'aggiornamento dei puntatori degli elementi passati. </p>
+<div class="fragment"><pre class="fragment">                                            {
+        l-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = p;
+        r-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = p;
+        p-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> = l;
+        p-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>= r;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4c9c294d4b3a0c708d4a2949e10704e3"></a><!-- doxytag: member="comprimi.cc::alloca" ref="a4c9c294d4b3a0c708d4a2949e10704e3" args="(codice &amp;conversione, unsigned char car, unsigned char buf[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a4c9c294d4b3a0c708d4a2949e10704e3">alloca</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> &amp;&#160;</td>
+          <td class="paramname"><em>conversione</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>car</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>buf</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assegna i codici ai caratteri. </p>
+<p>Quando esplorando l'albero incontriamo una foglia questa funzione viene chiamata e assegna il codice trovato fino a quel momento alla posizione del carattere trovato nella foglia. </p>
+<div class="fragment"><pre class="fragment">                                                                        {
+        <span class="keywordtype">int</span> lun = 0;
+        <span class="keywordflow">while</span> (buf[lun]!=<span class="charliteral">&#39;\0&#39;</span>)
+                lun++;
+        lun++;
+        conversione[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(car)] = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> [lun];
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;lun; i++)
+                conversione[static_cast&lt;int&gt;(car)][i]=buf[i];
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad3216cf1787ef33d8516e00587199238"></a><!-- doxytag: member="comprimi.cc::BuildMinHeap" ref="ad3216cf1787ef33d8516e00587199238" args="(queue &amp;coda)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#ad3216cf1787ef33d8516e00587199238">BuildMinHeap</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Costruzione di un Min-Heap. </p>
+<p>La funzione vede l'array come un albero binario e costruisce un Min Heap. In un Min Heap ogni nodo padre è minore dei suoi figli diretti. La funzione comincia a operare a metà dell'array (il primo nodo con figli) fino alla radice e applica le proprietà grazie alla funzione <a class="el" href="comprimi_8cc.html#ab459ac8eea28c8673e880c254144bc9b" title="Applica le proprietà di Heap a un nodo.">MinHeapify</a>. </p>
+<div class="fragment"><pre class="fragment">                              {
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>/2;i&gt;=1;i--)
+                <a class="code" href="comprimi_8cc.html#ab459ac8eea28c8673e880c254144bc9b" title="Applica le proprietà di Heap a un nodo.">MinHeapify</a>(coda,i,coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="af5128863f948581e5497fed53df27339"></a><!-- doxytag: member="comprimi.cc::codice_albero" ref="af5128863f948581e5497fed53df27339" args="(bool albero[], pnode p, int &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#af5128863f948581e5497fed53df27339">codice_albero</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>albero</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea il codice identificativo dell'albero. </p>
+<p>Esplora l'albero in ordine e assegna FALSE per ogni ramo sinistro che incontra e TRUE per ogni ramo destro. Ottiene un codice univoco e identificativo della struttura dell'albero. </p>
+<div class="fragment"><pre class="fragment">                                                  {
+        <span class="keywordflow">if</span> (p != NULL){
+                <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> != NULL){
+                        albero[i++] = <span class="keyword">false</span>;
+                        <a class="code" href="comprimi_8cc.html#af5128863f948581e5497fed53df27339" title="Crea il codice identificativo dell&#39;albero.">codice_albero</a>(albero, p-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>, i);
+                        }
+                <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> != NULL){
+                        albero[i++] = <span class="keyword">true</span>;
+                        <a class="code" href="comprimi_8cc.html#af5128863f948581e5497fed53df27339" title="Crea il codice identificativo dell&#39;albero.">codice_albero</a>(albero, p-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>, i);
+                        }
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="afe6eaad2795725afd370b8868fd69cac"></a><!-- doxytag: member="comprimi.cc::comprimi" ref="afe6eaad2795725afd370b8868fd69cac" args="(char sorgente[], char destinazione[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="comprimi_8h.html#afe6eaad2795725afd370b8868fd69cac">comprimi</a> </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sorgente</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>destinazione</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Funzione di Compressione. </p>
+<p>Questa funzione si occupa della compressione del file. Riceve in input il percorso del file da comprimere e il nome da dare al file compresso; Restituisce un valore booleano che indica se l'operazione è andata a buon fine. </p>
+<div class="fragment"><pre class="fragment">                                                    {
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;-Inizio funzione comprimi, con sorgente = &quot;</span>&lt;&lt;sorgente&lt;&lt;<span class="stringliteral">&quot; e destinazione = &quot;</span>&lt;&lt;destinazione&lt;&lt;endl);
+        <a class="code" href="structqueue.html" title="Struttura della Coda.">queue</a> coda;
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;-Chiamo inizializza_coda, gli passo coda&quot;</span>&lt;&lt;endl);
+        <a class="code" href="comprimi_8cc.html#a4a9a180bcd16390b353b6f3dc724a98d" title="Inizializzazione della coda.">inizializza_coda</a>(coda);
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;-Chiamo conta_occorrenze, gli passo sorgente = &quot;</span>&lt;&lt;sorgente&lt;&lt;<span class="stringliteral">&quot; e coda&quot;</span>&lt;&lt;endl);
+        <span class="keywordflow">if</span> (!<a class="code" href="comprimi_8cc.html#aafedd75a37b4fb078be65fec9fa899b6" title="Conta le occorrenze di ogni lettera.">conta_occorrenze</a>(sorgente, coda))
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;-Chiamo pulisci_coda, gli passo coda&quot;</span>&lt;&lt;endl);
+        <span class="keywordtype">int</span> num_caratteri = <a class="code" href="comprimi_8cc.html#a906a1aca9b2f6b1398ae23ef220c44b8" title="Elimina i caratteri non presenti nel file.">pulisci_coda</a>(coda);
+        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="charliteral">&#39;\t&#39;</span>&lt;&lt;<span class="stringliteral">&quot;-num_caratteri = &quot;</span>&lt;&lt;num_caratteri&lt;&lt;endl);
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;-Chiamo crea_albero, gli passo coda&quot;</span>&lt;&lt;endl);
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> root = <a class="code" href="comprimi_8cc.html#a48e40d9996e8606503a0aa06f8b30ad8" title="Crea l&#39;albero di compressione.">crea_albero</a>(coda);
+        <a class="code" href="struttura__dati_8h.html#a975397c373ae2a9dc28d0297fa18da56">D2</a>(cout&lt;&lt;<span class="charliteral">&#39;\t&#39;</span>&lt;&lt;<span class="stringliteral">&quot;-Crea_albero ritorna la radice dell&#39;albero&quot;</span>&lt;&lt;endl);
+        <a class="code" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> conversione;
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;-Chiamo genera_codice, gli passo root, conversione, num_caratteri = &quot;</span>&lt;&lt;num_caratteri&lt;&lt;endl);
+        <a class="code" href="comprimi_8cc.html#a57d4dc6640b04319864411b7a182e028" title="Genera una matrice contenente i codici di conversione.">genera_codice</a>(root,conversione,num_caratteri);
+        <a class="code" href="struttura__dati_8h.html#a330bea9b36f638349fec0d06c8ab4c38">D1</a>(cout&lt;&lt;<span class="stringliteral">&quot;-Chiamo scrivi_file, gli passo sorgente = &quot;</span>&lt;&lt;sorgente&lt;&lt;<span class="stringliteral">&quot; destinazione = &quot;</span>&lt;&lt;destinazione&lt;&lt;<span class="stringliteral">&quot; num_caratteri = &quot;</span>&lt;&lt;num_caratteri&lt;&lt;<span class="stringliteral">&quot; root e conversione&quot;</span>&lt;&lt;endl);
+        <span class="keywordflow">return</span>(<a class="code" href="comprimi_8cc.html#adb559e276d4d3a0100e4a3d57eee9cb2" title="Compone il file compresso.">scrivi_file</a>(sorgente, destinazione, num_caratteri, root, conversione));
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aafedd75a37b4fb078be65fec9fa899b6"></a><!-- doxytag: member="comprimi.cc::conta_occorrenze" ref="aafedd75a37b4fb078be65fec9fa899b6" args="(char sorgente[], queue &amp;coda)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="comprimi_8cc.html#aafedd75a37b4fb078be65fec9fa899b6">conta_occorrenze</a> </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sorgente</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Conta le occorrenze di ogni lettera. </p>
+<p>Prende in ingresso il file sorgente e conta le occorrenze di tutte le lettere. Riserva inoltre un carattere per segnalare la fine del file. La funzione restituisce un valore booleano che segnala se l'operazione è andata a buon fine. </p>
+<div class="fragment"><pre class="fragment">                                                   {
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> car;
+        ifstream f (sorgente);
+        <span class="keywordflow">if</span> (!f) 
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        <span class="keywordflow">while</span>(f.read(reinterpret_cast&lt;char *&gt;(&amp;car), sizeof (car)))
+                coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[static_cast&lt;int&gt;(car)+1]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>++;
+        coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>=<a class="code" href="struttura__dati_8h.html#af58356d62dd306b8dfec4c5672fc6f18" title="Numero massimo di caratteri.">CARATTERI_ASCII</a>-1;
+        f.close();
+        coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[1]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>++;
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a70ea44ad36568f0d848f9542cffeb691"></a><!-- doxytag: member="comprimi.cc::controllo_colore" ref="a70ea44ad36568f0d848f9542cffeb691" args="(pnode x, const pnode root)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a70ea44ad36568f0d848f9542cffeb691">controllo_colore</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>root</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sistema i colori dei nodi. </p>
+<p>Aggiusta i colori dei genitori dei nodi appena esplorati in modo da saltare la stampa di nodi privi di chiave significativa. Nodo BIANCO indica un nodo inesplorato. Nodo GRIGIO indica esplorato il sottoalbero di sinistra. Nodo NERO indica che il nodo è stato esplorato completamente (sia in suo sottoalbero di sinistra che quello di destra è stato scoperto). </p>
+<div class="fragment"><pre class="fragment">                                                 {
+        <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> == <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a3226bf95e2fad7dccac1089fb62a60d5">bianco</a>)
+                x-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> = <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a16d16c4bd6892954a40f8d5105483c5a">grigio</a>;
+        <span class="keywordflow">else</span>{
+                x-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> = <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a026ab1209905ffcd141965d2a55f14d3">nero</a>;
+                <span class="keywordflow">if</span> (x != root)
+                        <a class="code" href="comprimi_8cc.html#a70ea44ad36568f0d848f9542cffeb691" title="Sistema i colori dei nodi.">controllo_colore</a> (x-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>, root);
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5c4893649c04931b57bf2850acdaaa2a"></a><!-- doxytag: member="comprimi.cc::converti" ref="a5c4893649c04931b57bf2850acdaaa2a" args="(ostream &amp;f2, codice conversione, const char sorgente[], unsigned char &amp;BUFFER, int &amp;l_buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="comprimi_8cc.html#a5c4893649c04931b57bf2850acdaaa2a">converti</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>f2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a>&#160;</td>
+          <td class="paramname"><em>conversione</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>sorgente</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converte l'intero documento. </p>
+<p>La funzione scorre il file sorgente e grazie a <a class="el" href="comprimi_8cc.html#a6fbdc2f21993c5d60eda4422e31366fb" title="Scrive il codice di un dato carattere.">scrivi_codice</a>, carattere per carattere comprime il file. </p>
+<div class="fragment"><pre class="fragment">                                                                                                           {
+        ifstream f3 (sorgente);
+        <span class="keywordflow">if</span>(!f3)
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> car;
+        <span class="keywordflow">while</span>(f3.read(reinterpret_cast&lt;char *&gt;(&amp;car), sizeof (car)))
+                <a class="code" href="comprimi_8cc.html#a6fbdc2f21993c5d60eda4422e31366fb" title="Scrive il codice di un dato carattere.">scrivi_codice</a> (f2, conversione, car, BUFFER,l_buffer);
+        f3.close();
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a48e40d9996e8606503a0aa06f8b30ad8"></a><!-- doxytag: member="comprimi.cc::crea_albero" ref="a48e40d9996e8606503a0aa06f8b30ad8" args="(queue &amp;coda)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> <a class="el" href="decomprimi_8cc.html#a8c9810d3c0b036cbdec6c3482ab49e52">crea_albero</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea l'albero di compressione. </p>
+<p>La funzione estrae dalla coda (<a class="el" href="comprimi_8cc.html#aadb209fd0b3b245a5a158829acdea165" title="Estrae un elemento dalla coda.">dequeue</a>) due elementi e li unisce (<a class="el" href="comprimi_8cc.html#a4789dfca63932900f98a0a1e033a021b" title="Unisce due nodi.">unisci_nodi</a>), rimette in coda (<a class="el" href="comprimi_8cc.html#a958999b2187667bc127694dd497b7793" title="Inserisce un elemento in coda.">enqueue</a>) il nuovo nodo ottenuto. Quando in coda rimane un solo elemento ritorna il puntatore alla radice dell'albero creato e svuota la coda. </p>
+<div class="fragment"><pre class="fragment">                              {
+        <span class="keywordflow">while</span> (coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>&gt;1){
+                <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = <a class="code" href="comprimi_8cc.html#aadb209fd0b3b245a5a158829acdea165" title="Estrae un elemento dalla coda.">dequeue</a> (coda);
+                <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> y = <a class="code" href="comprimi_8cc.html#aadb209fd0b3b245a5a158829acdea165" title="Estrae un elemento dalla coda.">dequeue</a> (coda);
+                <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> p = <a class="code" href="comprimi_8cc.html#a4789dfca63932900f98a0a1e033a021b" title="Unisce due nodi.">unisci_nodi</a>(x,y);
+                <a class="code" href="comprimi_8cc.html#a958999b2187667bc127694dd497b7793" title="Inserisce un elemento in coda.">enqueue</a> (coda,p);
+                }
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> root = coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[1];
+        coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a> = 0;
+        <span class="keywordflow">return</span> root;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a1e65594bacfcdda215298933450ec1a4"></a><!-- doxytag: member="comprimi.cc::crea_preambolo" ref="a1e65594bacfcdda215298933450ec1a4" args="(unsigned char preambolo[], pnode root, int n_caratteri)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a1e65594bacfcdda215298933450ec1a4">crea_preambolo</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>preambolo</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_caratteri</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea il preambolo. </p>
+<p>La funzione crea il preambolo necessario per la decompressione futura del file. Il preambolo è composto da un byte che indica quante sono le lettere pressenti nel file più tutte le lettere in ordine da sinistra verso destra nell'albero. Questa configurazione permette al decompressore di ricostruire l'albero biario e di conseguenza il codice di decompressione. </p>
+<div class="fragment"><pre class="fragment">                                                                           {
+        preambolo[0] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(n_caratteri);
+        <span class="keywordtype">int</span> i = 1;
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = root;
+        <a class="code" href="comprimi_8cc.html#a0dd1312d1f20daeec302079395f11f49" title="Funzione ricorsiva per la creazione del preambolo.">preambolo_ric</a>(preambolo,x,i);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ab45a082141b2515ea2cd76a1192d894d"></a><!-- doxytag: member="comprimi.cc::DDD" ref="ab45a082141b2515ea2cd76a1192d894d" args="(const pnode p, bool foglie)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#ab45a082141b2515ea2cd76a1192d894d">DDD</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>foglie</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">                                    {
+        <span class="keywordflow">if</span> (p != NULL){
+                <a class="code" href="comprimi_8cc.html#ab45a082141b2515ea2cd76a1192d894d">DDD</a>(p-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>, foglie);
+                <span class="keywordflow">if</span> (foglie &amp;&amp; p-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> != -1)
+                        cout&lt;&lt;p-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a>&lt;&lt;endl;
+                <span class="keywordflow">if</span> (!foglie &amp;&amp; p-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> == -1)
+                        cout&lt;&lt;p-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a>&lt;&lt;endl;
+                <a class="code" href="comprimi_8cc.html#ab45a082141b2515ea2cd76a1192d894d">DDD</a>(p-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>, foglie);
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aadb209fd0b3b245a5a158829acdea165"></a><!-- doxytag: member="comprimi.cc::dequeue" ref="aadb209fd0b3b245a5a158829acdea165" args="(queue &amp;coda)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> <a class="el" href="comprimi_8cc.html#aadb209fd0b3b245a5a158829acdea165">dequeue</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estrae un elemento dalla coda. </p>
+<p>Estrae l'elemento in testa (con occorrenza minore) ritornando un puntatore al nodo se la coda non è vuota. </p>
+<div class="fragment"><pre class="fragment">                          {
+        <span class="keywordflow">if</span> (coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>&lt;=0) 
+                <span class="keywordflow">return</span> NULL;
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x= coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[1];
+        <a class="code" href="comprimi_8cc.html#aa3bdb5be98afb1d72a73de21d21cee4c" title="Scambia due nodi.">scambio</a>(coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>],coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[1]);
+        coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>--;
+        <span class="keywordflow">if</span> (coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>&gt;1)
+                <a class="code" href="comprimi_8cc.html#ab459ac8eea28c8673e880c254144bc9b" title="Applica le proprietà di Heap a un nodo.">MinHeapify</a>(coda,1,coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>);
+        <span class="keywordflow">return</span> x;
+<a class="code" href="comprimi_8cc.html#ad3216cf1787ef33d8516e00587199238" title="Costruzione di un Min-Heap.">BuildMinHeap</a>(coda);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a958999b2187667bc127694dd497b7793"></a><!-- doxytag: member="comprimi.cc::enqueue" ref="a958999b2187667bc127694dd497b7793" args="(queue &amp;coda, pnode x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a958999b2187667bc127694dd497b7793">enqueue</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inserisce un elemento in coda. </p>
+<p>La funzione prende in ingresso un puntatore a un nodo esistente e lo inserisce nell'ultima posizione della coda. In seguito chiama la <a class="el" href="comprimi_8cc.html#a7fa56c288846ab264e02cecde1f42cf6" title="Ristabilisce l&#39;Heap dopo l&#39;inserimento.">RestoreHeap</a> che lo fa risalire fino alla posizione corretta nello Heap. </p>
+<div class="fragment"><pre class="fragment">                                  {
+        coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[++coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>]=x;
+        <a class="code" href="comprimi_8cc.html#a7fa56c288846ab264e02cecde1f42cf6" title="Ristabilisce l&#39;Heap dopo l&#39;inserimento.">RestoreHeap</a>(coda,coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a57d4dc6640b04319864411b7a182e028"></a><!-- doxytag: member="comprimi.cc::genera_codice" ref="a57d4dc6640b04319864411b7a182e028" args="(const pnode &amp;root, codice &amp;conversione, const int num_caratteri)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a57d4dc6640b04319864411b7a182e028">genera_codice</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a> &amp;&#160;</td>
+          <td class="paramname"><em>conversione</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>num_caratteri</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Genera una matrice contenente i codici di conversione. </p>
+<p>Esplora l'albero e tramite <a class="el" href="comprimi_8cc.html#a4c9c294d4b3a0c708d4a2949e10704e3" title="Assegna i codici ai caratteri.">alloca</a> assegna man mano tutti i codici ai rispettivi caratteri. </p>
+<div class="fragment"><pre class="fragment">                                                                                   {
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buffer = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> [num_caratteri];
+        <a class="code" href="comprimi_8cc.html#ad57ea5c0a245068c18c55cacf5819489" title="Resetta i colori dei nodi.">resetta_colori</a>(root);
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = root;
+        <span class="keywordtype">int</span> i = 0;
+        <span class="keywordflow">while</span>(root-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> != <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a026ab1209905ffcd141965d2a55f14d3">nero</a>){
+                <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> == <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a3226bf95e2fad7dccac1089fb62a60d5">bianco</a>){
+                        buffer[i++]=<span class="charliteral">&#39;0&#39;</span>;
+                        x=x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>;
+                        }
+                <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> == <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a16d16c4bd6892954a40f8d5105483c5a">grigio</a>){
+                        buffer[i++]=<span class="charliteral">&#39;1&#39;</span>;
+                        x=x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>;
+                        }
+                <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> == <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a026ab1209905ffcd141965d2a55f14d3">nero</a>){
+                        buffer[i] = <span class="charliteral">&#39;\0&#39;</span>;
+                        <a class="code" href="comprimi_8cc.html#a4c9c294d4b3a0c708d4a2949e10704e3" title="Assegna i codici ai caratteri.">alloca</a>(conversione, x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a>, buffer);
+                        <a class="code" href="comprimi_8cc.html#a70ea44ad36568f0d848f9542cffeb691" title="Sistema i colori dei nodi.">controllo_colore</a>(x-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>, root);
+                        x = root;
+                        i=0;
+                        }
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8f9dc2e4a03e49768ad4ca4cbe164eb6"></a><!-- doxytag: member="comprimi.cc::HeapSort" ref="a8f9dc2e4a03e49768ad4ca4cbe164eb6" args="(queue &amp;coda)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a8f9dc2e4a03e49768ad4ca4cbe164eb6">HeapSort</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ordinamento decrescente. </p>
+<p>La funzione permette di ordinare un vettore in modo decrescente utilizzando un Heap. (Heap Sort). </p>
+<div class="fragment"><pre class="fragment">                          {
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>;i&gt;1;i--){
+                <a class="code" href="comprimi_8cc.html#aa3bdb5be98afb1d72a73de21d21cee4c" title="Scambia due nodi.">scambio</a>(coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[1],coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[i]);
+                <a class="code" href="comprimi_8cc.html#ab459ac8eea28c8673e880c254144bc9b" title="Applica le proprietà di Heap a un nodo.">MinHeapify</a>(coda,1,i-1);
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4a9a180bcd16390b353b6f3dc724a98d"></a><!-- doxytag: member="comprimi.cc::inizializza_coda" ref="a4a9a180bcd16390b353b6f3dc724a98d" args="(queue &amp;coda)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a4a9a180bcd16390b353b6f3dc724a98d">inizializza_coda</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inizializzazione della coda. </p>
+<p>La funzione prende in ingresso una coda e la inizializza a 0 elementi. La funzione inoltre azzera tutte le occorrenze </p>
+<div class="fragment"><pre class="fragment">                                  {
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=1; i&lt;<a class="code" href="struttura__dati_8h.html#af58356d62dd306b8dfec4c5672fc6f18" title="Numero massimo di caratteri.">CARATTERI_ASCII</a>;i++){
+                coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[i]=<span class="keyword">new</span> <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">nodo_t</a>;
+                coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[i]-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>=NULL;
+                coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[i]-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>=NULL;
+                coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[i]-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>=NULL;
+                coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[i]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>=0;
+                coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[i]-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a>=<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(i-1);
+                }
+        coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>=0;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a21cb4873729513741752a7b6b988746f"></a><!-- doxytag: member="comprimi.cc::inserisci_terminatore" ref="a21cb4873729513741752a7b6b988746f" args="(ostream &amp;f2, codice conversione, unsigned char &amp;BUFFER, int &amp;l_buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a21cb4873729513741752a7b6b988746f">inserisci_terminatore</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>f2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a>&#160;</td>
+          <td class="paramname"><em>conversione</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inserisce il terminatore. </p>
+<p>Per segnalare la fine del documento è stato riservato un codice di terminazione. Esso si riferisce al carattere speciale della tabella ASCII di posizione 0 non utilizzato nei file di testo. Servirà in fase di decompressione per segnalare la fine del file. </p>
+<div class="fragment"><pre class="fragment">                                                                                                {
+        <a class="code" href="comprimi_8cc.html#a6fbdc2f21993c5d60eda4422e31366fb" title="Scrive il codice di un dato carattere.">scrivi_codice</a>(f2,conversione,0,BUFFER, l_buffer);       
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ab459ac8eea28c8673e880c254144bc9b"></a><!-- doxytag: member="comprimi.cc::MinHeapify" ref="ab459ac8eea28c8673e880c254144bc9b" args="(queue &amp;coda, int j, int n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#ab459ac8eea28c8673e880c254144bc9b">MinHeapify</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Applica le proprietà di Heap a un nodo. </p>
+<p>Partendo dal nodo j controlla ricorsivamente se rispetta le proprietà di Heap. La chiamata ricorsiva avviene sul figlio solo nel caso in cui sia stato effettuato almeno uno scambio (tra padre e figlio). </p>
+<div class="fragment"><pre class="fragment">                                          {
+        <span class="keywordtype">int</span> k=j;
+        <span class="keywordflow">if</span> ((2*j+1&lt;=n) &amp;&amp; (coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[2*j+1]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>&lt;coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[k]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>))
+                k=2*j+1;
+        <span class="keywordflow">if</span> (2*j&lt;=n &amp;&amp; coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[2*j]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>&lt;coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[k]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>)
+                k=2*j;
+        <span class="keywordflow">if</span> (k!=j){
+                <a class="code" href="comprimi_8cc.html#aa3bdb5be98afb1d72a73de21d21cee4c" title="Scambia due nodi.">scambio</a> (coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[j],coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[k]);
+                <a class="code" href="comprimi_8cc.html#ab459ac8eea28c8673e880c254144bc9b" title="Applica le proprietà di Heap a un nodo.">MinHeapify</a>(coda, k, n);
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0dd1312d1f20daeec302079395f11f49"></a><!-- doxytag: member="comprimi.cc::preambolo_ric" ref="a0dd1312d1f20daeec302079395f11f49" args="(unsigned char preambolo[], pnode &amp;x, int &amp;i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a0dd1312d1f20daeec302079395f11f49">preambolo_ric</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>preambolo</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Funzione ricorsiva per la creazione del preambolo. </p>
+<p>La funzione si occupa di esplorare l'albero e di salvare le lettere presenti nelle foglie. Salva il risltato in un buffer. </p>
+<div class="fragment"><pre class="fragment">                                                               {
+         <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> == NULL &amp;&amp; x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> == NULL){
+                preambolo[i++] = x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a>;
+                <span class="keywordflow">return</span>;
+                }
+        <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> != NULL)
+                <a class="code" href="comprimi_8cc.html#a0dd1312d1f20daeec302079395f11f49" title="Funzione ricorsiva per la creazione del preambolo.">preambolo_ric</a>(preambolo,x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>,i);
+        <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> != NULL)
+                <a class="code" href="comprimi_8cc.html#a0dd1312d1f20daeec302079395f11f49" title="Funzione ricorsiva per la creazione del preambolo.">preambolo_ric</a>(preambolo,x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>,i);
+        
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a906a1aca9b2f6b1398ae23ef220c44b8"></a><!-- doxytag: member="comprimi.cc::pulisci_coda" ref="a906a1aca9b2f6b1398ae23ef220c44b8" args="(queue &amp;coda)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="comprimi_8cc.html#a906a1aca9b2f6b1398ae23ef220c44b8">pulisci_coda</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Elimina i caratteri non presenti nel file. </p>
+<p>La funzione modifica la coda in modo da eliminare gli eleminti che non sono presenti nel file. Restituisce un min Heap e il numero di caratteri presenti. </p>
+<div class="fragment"><pre class="fragment">                             {
+        <a class="code" href="comprimi_8cc.html#ad3216cf1787ef33d8516e00587199238" title="Costruzione di un Min-Heap.">BuildMinHeap</a>(coda);
+        <a class="code" href="comprimi_8cc.html#a8f9dc2e4a03e49768ad4ca4cbe164eb6" title="Ordinamento decrescente.">HeapSort</a>(coda);
+        <span class="keywordflow">while</span>(coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>==0){
+                <span class="keyword">delete</span>[] coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>];
+                coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>--;
+                }
+        <a class="code" href="comprimi_8cc.html#ad3216cf1787ef33d8516e00587199238" title="Costruzione di un Min-Heap.">BuildMinHeap</a>(coda);
+        <span class="keywordflow">return</span> coda.<a class="code" href="structqueue.html#a9b8a507a94975d2a81ebe91d8ea2ca66">n_elementi</a>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad57ea5c0a245068c18c55cacf5819489"></a><!-- doxytag: member="comprimi.cc::resetta_colori" ref="ad57ea5c0a245068c18c55cacf5819489" args="(const pnode &amp;root)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#ad57ea5c0a245068c18c55cacf5819489">resetta_colori</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resetta i colori dei nodi. </p>
+<p>La funzione scorre tutti i nodi dell'albero e inizilializza a bianco tutti i nodi interni, solo le foglie a nero. </p>
+<div class="fragment"><pre class="fragment">                                      {
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> p = root;
+        <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> == NULL &amp;&amp; p-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> == NULL){
+                p-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> = <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a026ab1209905ffcd141965d2a55f14d3">nero</a>;
+                <span class="keywordflow">return</span>;
+                }
+        p-&gt;<a class="code" href="structnodo__t.html#a9e213085b945a767354580f018e9fd6c">colore</a> = <a class="code" href="struttura__dati_8h.html#afe13424a6e8bc9b5ab4e4a5676e087a8a3226bf95e2fad7dccac1089fb62a60d5">bianco</a>;
+        <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> != NULL)
+                <a class="code" href="comprimi_8cc.html#ad57ea5c0a245068c18c55cacf5819489" title="Resetta i colori dei nodi.">resetta_colori</a>(p-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>);
+        <span class="keywordflow">if</span> (p-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> != NULL)
+                <a class="code" href="comprimi_8cc.html#ad57ea5c0a245068c18c55cacf5819489" title="Resetta i colori dei nodi.">resetta_colori</a>(p-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>);       
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a7fa56c288846ab264e02cecde1f42cf6"></a><!-- doxytag: member="comprimi.cc::RestoreHeap" ref="a7fa56c288846ab264e02cecde1f42cf6" args="(queue &amp;coda, int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a7fa56c288846ab264e02cecde1f42cf6">RestoreHeap</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structqueue.html">queue</a> &amp;&#160;</td>
+          <td class="paramname"><em>coda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ristabilisce l'Heap dopo l'inserimento. </p>
+<p>Dopo un inserimento il nodo da controllare si trova in una foglia e questa funzione controlla se il nodo deve salire nell'Heap. Effettua gli scambi necessari a ristabilire la proprietà di Heap. </p>
+<div class="fragment"><pre class="fragment">                                      {
+        <span class="keywordflow">while</span> (pos&gt;1 &amp;&amp; coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[pos]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>&lt;coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[pos/2]-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>){
+                <a class="code" href="comprimi_8cc.html#aa3bdb5be98afb1d72a73de21d21cee4c" title="Scambia due nodi.">scambio</a>(coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[pos],coda.<a class="code" href="structqueue.html#ae51389dda8b2b2f9a84f548769134375">elemento</a>[pos/2]);
+                pos=pos/2;
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aa3bdb5be98afb1d72a73de21d21cee4c"></a><!-- doxytag: member="comprimi.cc::scambio" ref="aa3bdb5be98afb1d72a73de21d21cee4c" args="(pnode &amp;a, pnode &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#aa3bdb5be98afb1d72a73de21d21cee4c">scambio</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scambia due nodi. </p>
+<p>La funzione prende in ingresso due puntatori e li scambia. </p>
+<div class="fragment"><pre class="fragment">                               {
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> p=a;
+        a=b;
+        b=p;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a1ec34bc049766f05a85197fa2457dd1e"></a><!-- doxytag: member="comprimi.cc::scrivi_albero" ref="a1ec34bc049766f05a85197fa2457dd1e" args="(ostream &amp;f2, pnode root, int n_caratteri, unsigned char &amp;BUFFER, int &amp;l_buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a1ec34bc049766f05a85197fa2457dd1e">scrivi_albero</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>f2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_caratteri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scrive il codice identificativo dell'albero sul file. </p>
+<p>Utilizzando la funzione <a class="el" href="comprimi_8cc.html#af5128863f948581e5497fed53df27339" title="Crea il codice identificativo dell&#39;albero.">codice_albero</a> scrive il codice ottenuto nel file. Se rimangono bit sul buffer verranno completati in seguito. </p>
+<div class="fragment"><pre class="fragment">                                                                                                   {
+        <span class="keywordtype">bool</span> albero[2*(n_caratteri-1)];
+        <span class="keywordtype">int</span> i=0;
+        <a class="code" href="comprimi_8cc.html#af5128863f948581e5497fed53df27339" title="Crea il codice identificativo dell&#39;albero.">codice_albero</a>(albero, root, i);
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;2*(n_caratteri-1);k++){
+                BUFFER = BUFFER&lt;&lt;1;
+                <span class="keywordflow">if</span> (albero [k])
+                        <a class="code" href="comprimi_8cc.html#aa9c51e327e897f482650207e6946df05" title="Setta l&#39;ultimo bit.">setlastbit</a>(BUFFER);
+                l_buffer++;
+                <span class="keywordflow">if</span> (l_buffer == 8){
+                        f2&lt;&lt;BUFFER;
+                        BUFFER = 0;
+                        l_buffer = 0;
+                        }
+        }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a6fbdc2f21993c5d60eda4422e31366fb"></a><!-- doxytag: member="comprimi.cc::scrivi_codice" ref="a6fbdc2f21993c5d60eda4422e31366fb" args="(ostream &amp;f2, codice conversione, unsigned char car, unsigned char &amp;BUFFER, int &amp;l_buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a6fbdc2f21993c5d60eda4422e31366fb">scrivi_codice</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>f2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a>&#160;</td>
+          <td class="paramname"><em>conversione</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>car</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scrive il codice di un dato carattere. </p>
+<p>La funzione riceve in input un caratere e scrive sul flusso il codice relativo. </p>
+<div class="fragment"><pre class="fragment">                                                                                                            {
+        <span class="keywordtype">int</span> i=0;
+        <span class="keywordflow">while</span>(conversione[static_cast&lt;int&gt;(car)][i] != <span class="charliteral">&#39;\0&#39;</span>){
+                BUFFER = BUFFER&lt;&lt;1;
+                <span class="keywordflow">if</span> (conversione[static_cast&lt;int&gt;(car)][i++] == <span class="charliteral">&#39;1&#39;</span>)
+                        <a class="code" href="comprimi_8cc.html#aa9c51e327e897f482650207e6946df05" title="Setta l&#39;ultimo bit.">setlastbit</a>(BUFFER);
+                l_buffer++;
+                <span class="keywordflow">if</span> (l_buffer == 8){
+                        f2&lt;&lt;BUFFER;
+                        l_buffer = 0;
+                        BUFFER = 0;
+                        }
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="adb559e276d4d3a0100e4a3d57eee9cb2"></a><!-- doxytag: member="comprimi.cc::scrivi_file" ref="adb559e276d4d3a0100e4a3d57eee9cb2" args="(const char sorgente[], const char destinazione[], int n_caratteri, pnode root, codice conversione)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="comprimi_8cc.html#adb559e276d4d3a0100e4a3d57eee9cb2">scrivi_file</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>sorgente</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>destinazione</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_caratteri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a01263eda298b2e6da33b546a92e3a073">codice</a>&#160;</td>
+          <td class="paramname"><em>conversione</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compone il file compresso. </p>
+<p>La funzione si avvale di altre funzioni per creare tutte le parti necessarie al file compresso. Principalmente si occupa dell'apertura del flusso di scrittura su file che passa alle altre funzioni che creano pezzo per pezzo il file. </p>
+<div class="fragment"><pre class="fragment">                                                                                                                  {
+        ofstream f2 (destinazione);
+        <span class="keywordflow">if</span> (!f2)
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        
+        <a class="code" href="comprimi_8cc.html#a2241ac2e0dbb102ecdfae65d77376f78" title="Scrive il preambolo sul file.">scrivi_preambolo</a>(f2, root, n_caratteri);
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> BUFFER = 0;
+        <span class="keywordtype">int</span> l_buffer = 0;
+        <a class="code" href="comprimi_8cc.html#a1ec34bc049766f05a85197fa2457dd1e" title="Scrive il codice identificativo dell&#39;albero sul file.">scrivi_albero</a>(f2, root, n_caratteri, BUFFER, l_buffer);
+        <span class="keywordtype">bool</span> cont1 = <a class="code" href="comprimi_8cc.html#a5c4893649c04931b57bf2850acdaaa2a" title="Converte l&#39;intero documento.">converti</a>(f2, conversione, sorgente, BUFFER, l_buffer);
+        <a class="code" href="comprimi_8cc.html#a21cb4873729513741752a7b6b988746f" title="Inserisce il terminatore.">inserisci_terminatore</a> (f2, conversione, BUFFER, l_buffer);
+        <a class="code" href="comprimi_8cc.html#a12904a37d41b12bca95d960e6783db68" title="Svuota il buffer.">svuota_buffer</a>(f2, BUFFER, l_buffer);
+        f2.close();
+        <span class="keywordflow">return</span> (cont1);
+
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a2241ac2e0dbb102ecdfae65d77376f78"></a><!-- doxytag: member="comprimi.cc::scrivi_preambolo" ref="a2241ac2e0dbb102ecdfae65d77376f78" args="(ostream &amp;f2, pnode root, int n_caratteri)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a2241ac2e0dbb102ecdfae65d77376f78">scrivi_preambolo</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>f2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_caratteri</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Scrive il preambolo sul file. </p>
+<p>La funzione riceve in insgresso lo stream sul quale scrive il preambolo. </p>
+<div class="fragment"><pre class="fragment">                                                               {
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> preambolo[n_caratteri];
+        <a class="code" href="comprimi_8cc.html#a1e65594bacfcdda215298933450ec1a4" title="Crea il preambolo.">crea_preambolo</a>(preambolo,root,n_caratteri);
+        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;=n_caratteri;j++)
+                f2&lt;&lt;preambolo[j];
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aa9c51e327e897f482650207e6946df05"></a><!-- doxytag: member="comprimi.cc::setlastbit" ref="aa9c51e327e897f482650207e6946df05" args="(unsigned char &amp;MASK)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#aa9c51e327e897f482650207e6946df05">setlastbit</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>MASK</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Setta l'ultimo bit. </p>
+<p>La funzione prende in ingresso una maschera e ne setta il bit meno significativo. </p>
+<div class="fragment"><pre class="fragment">                                    {
+MASK = MASK | 1;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a12904a37d41b12bca95d960e6783db68"></a><!-- doxytag: member="comprimi.cc::svuota_buffer" ref="a12904a37d41b12bca95d960e6783db68" args="(ostream &amp;f2, unsigned char &amp;BUFFER, int &amp;l_buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="comprimi_8cc.html#a12904a37d41b12bca95d960e6783db68">svuota_buffer</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>f2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Svuota il buffer. </p>
+<p>La funzione controlla se ci sono bit significativi nel ::BUFFER e se presenti li scrive nel file. </p>
+<div class="fragment"><pre class="fragment">                                                                     {
+        <span class="keywordflow">if</span> (l_buffer &gt; 0){
+                BUFFER = BUFFER&lt;&lt;(8-l_buffer);
+                f2&lt;&lt;BUFFER;
+                l_buffer = 0;
+                BUFFER = 0;
+                }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4789dfca63932900f98a0a1e033a021b"></a><!-- doxytag: member="comprimi.cc::unisci_nodi" ref="a4789dfca63932900f98a0a1e033a021b" args="(pnode &amp;x, pnode &amp;y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> <a class="el" href="comprimi_8cc.html#a4789dfca63932900f98a0a1e033a021b">unisci_nodi</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unisce due nodi. </p>
+<p>La funzione crea un nuovo nodo che ha come carattere un valore non significativo e come occorrenze la somma delle occorrenze dei nodi passati. Li <a class="el" href="comprimi_8cc.html#a4f13ccb60328da9b1de70dbe8384ac85" title="Aggancia padre e figli.">aggancia</a> come figli e infine ritorna un puntatore all'oggetto creato. </p>
+<div class="fragment"><pre class="fragment">                                     {
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> p = <span class="keyword">new</span> <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">nodo_t</a>;
+        p-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a>=-1;
+        p-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a> = x-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a> + y-&gt;<a class="code" href="structnodo__t.html#aeaac09068e9964e1cf0dc0cf0cbddb3e">occorrenze</a>;
+        p-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>=NULL;
+        <a class="code" href="comprimi_8cc.html#a4f13ccb60328da9b1de70dbe8384ac85" title="Aggancia padre e figli.">aggancia</a>(p,x,y);
+        <span class="keywordflow">return</span> p;
+}
+</pre></div>
+</div>
+</div>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Generato Gio 4 Lug 2013 10:16:16 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
