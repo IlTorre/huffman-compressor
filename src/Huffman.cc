@@ -23,22 +23,28 @@
 #include <gtk/gtk.h>
 #include <cstring>
 #include <sstream>
+#include <cstdlib>
 #include "struttura_dati.h"
 #include "comprimi.h"
 #include "decomprimi.h"
 
 GtkBuilder *builder;
 
-/**Segnale che chiude la finestra in cui si trova il pulsante premuto */
-extern "C" void hide_main_window(GtkButton *button, gpointer data)
-{
+/** Chiude la finestra aperta.
+ *
+ * Segnale che chiude la finestra in cui viene premuto il pulsante.
+ */
+extern "C" void hide_main_window(GtkButton *button, gpointer data){
 	gtk_widget_hide(gtk_widget_get_toplevel(GTK_WIDGET(button)));
 }
-/** funzione che visualizza una finestra dialogo con l'utente che comunica 
-* la riuscita o meno di una certa operazione
-*/
-static void mostra_messaggi(bool c1,int flag_cmp)
-{
+
+
+/** Messaggi per l'utente.
+ *
+ * Questa funzione visualizza una finestra dialogo con l'utente che
+ * comunica la riuscita o meno di una certa operazione.
+ */
+static void mostra_messaggi(bool c1,int flag_cmp){
 	GtkWidget *ins_dialog=GTK_WIDGET(gtk_builder_get_object(builder,"messaggi_utente"));
 	GtkLabel *label=GTK_LABEL(gtk_builder_get_object(builder,"messaggio"));
 	GtkImage *image=GTK_IMAGE(gtk_builder_get_object(builder,"img_result"));
@@ -113,7 +119,7 @@ static char * crea_destinazione(gpointer data,bool flag)
 	char *nome_file=new char [strlen(testo_file)];
 	s>>nome_file;
 	//cout<<nome_file<<endl;
-	if((nome_file[0]<'a' || nome_file[0]>'z'))
+	if((nome_file[0]<'A' || nome_file[0]>'z'))
 	{		
 		return NULL;
 	}
@@ -153,9 +159,9 @@ static void effettua_compressione(gpointer data)
 	
 	bool c1=comprimi(sorg,dest);
 	
-	mostra_messaggi(c1,1);
-	
 	chiudi_salvataggio();
+	
+	mostra_messaggi(c1,1);
 }
 /** segnale che gestisce l'evento click del pulsante decomprimi
 * questo segnale apre un finestra di dialogo dove poter salvare 
@@ -202,9 +208,9 @@ static void effettua_decompressione(gpointer data)
 		
 	bool c2=decomprimi(sorg,dest);
 	
-	mostra_messaggi(c2,0);
-	
 	chiudi_salvataggio();
+	
+	mostra_messaggi(c2,0);
 }
 /** segnale paragonbile a un front-end permette di decidere quale operazione eseguire 
 * se la compressione o la decompressione del file
@@ -221,7 +227,7 @@ extern "C" void handler_scegli_op(GtkButton *button,gpointer data)
 /** link alla documentazione */
 extern "C" void handler_carica_documentazione(GtkMenuItem *item,gpointer data)
 {
-	//system("firefox 
+	system("firefox ../doc/html/index.html");
 }
 int main(int argc,char *argv[]){
 
