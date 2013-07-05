@@ -171,7 +171,7 @@ Variabili</h2></td></tr>
 <p>Segnale che gestisce l'evento click del pulsante compressore: apre la finestra di dialogo adibita al salvataggio del file compresso, ricava il percorso di salvataggio e comunica lo stato dell'operazione. </p>
 <div class="fragment"><pre class="fragment">                                                                 {      
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;mex_esegui&quot;</span>)),<span class="stringliteral">&quot;Comprimi&quot;</span>);
-        gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;scegli dove salvare e il nome del file compresso&quot;</span>);
+        gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;Scegli dove salvare e il nome del file compresso&quot;</span>);
         gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
         <span class="keywordflow">if</span>(sorg==NULL){         
                 mostra_messaggi(<span class="keyword">false</span>,1);
@@ -212,7 +212,7 @@ Variabili</h2></td></tr>
 <p>Segnale che gestisce l'evento click del pulsante decompressore: apre la finestra di dialogo adibita al salvataggio del file decompresso, ricava il percorso di salvataggio e comunica lo stato dell'operazione. </p>
 <div class="fragment"><pre class="fragment">                                                                   {
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;mex_esegui&quot;</span>)),<span class="stringliteral">&quot;Decomprimi&quot;</span>);
-        gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;scegli dove salvare e il nome del file decompresso&quot;</span>);
+        gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;Scegli dove salvare e il nome del file decompresso&quot;</span>);
         gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
         <span class="keywordflow">if</span>(sorg==NULL){         
                 mostra_messaggi(<span class="keyword">false</span>,0);
@@ -397,7 +397,7 @@ Variabili</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generato Gio 4 Lug 2013 16:51:00 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Ven 5 Lug 2013 11:47:15 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
