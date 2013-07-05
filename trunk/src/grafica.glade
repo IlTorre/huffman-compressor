@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkFileFilter" id="filtro_file3">
+    <patterns>
+      <pattern>folder</pattern>
+    </patterns>
+  </object>
   <object class="GtkFileFilter" id="filtro_file">
     <mime-types>
       <mime-type>*.txt</mime-type>
@@ -15,11 +20,6 @@
     </mime-types>
     <patterns>
       <pattern>*.huf</pattern>
-    </patterns>
-  </object>
-  <object class="GtkFileFilter" id="filtro_file3">
-    <patterns>
-      <pattern>folder</pattern>
     </patterns>
   </object>
   <object class="GtkWindow" id="main_window1">
@@ -41,6 +41,7 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkMenuItem" id="menuitem1">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_File</property>
@@ -52,6 +53,7 @@
                     <child>
                       <object class="GtkImageMenuItem" id="imagemenuitem5">
                         <property name="label">gtk-quit</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
@@ -65,6 +67,7 @@
             </child>
             <child>
               <object class="GtkMenuItem" id="menuitem4">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">A_iuto</property>
@@ -75,6 +78,7 @@
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkMenuItem" id="Documentazione">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Documentazione</property>
@@ -139,9 +143,11 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="button2">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
                         <property name="image_position">top</property>
                         <signal name="clicked" handler="handler_comprimi" object="chooser_compressore" swapped="no"/>
                         <child>
@@ -218,9 +224,11 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="button3">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="receives_default">True</property>
+                        <property name="use_action_appearance">False</property>
                         <signal name="clicked" handler="handler_decomprimi" object="chooser_decompressore" swapped="no"/>
                         <child>
                           <object class="GtkBox" id="box7">
@@ -324,9 +332,11 @@
             <child>
               <object class="GtkButton" id="button1">
                 <property name="label" translatable="yes">OK</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="hide_main_window" swapped="no"/>
               </object>
               <packing>
@@ -391,8 +401,8 @@
     <property name="border_width">5</property>
     <property name="modal">True</property>
     <property name="window_position">center</property>
-    <property name="default_width">400</property>
-    <property name="default_height">420</property>
+    <property name="default_width">500</property>
+    <property name="default_height">520</property>
     <property name="type_hint">dialog</property>
     <signal name="delete-event" handler="gtk_widget_hide" swapped="no"/>
     <child internal-child="vbox">
@@ -406,9 +416,11 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="esegui">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="handler_scegli_op" object="filechooserwidget1" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="mex_esegui">
@@ -427,9 +439,11 @@
             <child>
               <object class="GtkButton" id="button5">
                 <property name="label" translatable="yes">Esci</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
                 <signal name="clicked" handler="hide_main_window" swapped="no"/>
               </object>
               <packing>
@@ -478,18 +492,6 @@
                 <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="label6">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">(selezionare la cartella di destinazione)</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
               </packing>
             </child>
             <child>

@@ -83,7 +83,7 @@ static void mostra_messaggi(bool c1,int flag_cmp){
  */
 extern "C" void handler_comprimi(GtkButton *button,gpointer data){	
 	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"mex_esegui")),"Comprimi");
-	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"msg")),"scegli dove salvare e il nome del file compresso");
+	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"msg")),"Scegli dove salvare e il nome del file compresso");
 	gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
 	if(sorg==NULL){		
 		mostra_messaggi(false,1);
@@ -114,7 +114,7 @@ static void chiudi_salvataggio(){
  * Es: PERCORSO/NOMEFILE.ESTENSIONE
  */
 static char * crea_destinazione(gpointer data,bool flag){
-	char *percorso=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
+	char *percorso=gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(data));
 	if(percorso==NULL)
 		return NULL;
 	GtkEntry *entry=GTK_ENTRY(gtk_builder_get_object(builder,"nome_file"));
@@ -167,7 +167,7 @@ static void effettua_compressione(gpointer data){
  */
 extern "C" void handler_decomprimi(GtkButton *button,gpointer data){
 	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"mex_esegui")),"Decomprimi");
-	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"msg")),"scegli dove salvare e il nome del file decompresso");
+	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"msg")),"Scegli dove salvare e il nome del file decompresso");
 	gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
 	if(sorg==NULL){		
 		mostra_messaggi(false,0);
