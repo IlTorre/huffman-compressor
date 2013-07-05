@@ -173,7 +173,10 @@ Variabili</h2></td></tr>
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;mex_esegui&quot;</span>)),<span class="stringliteral">&quot;Comprimi&quot;</span>);
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;Scegli dove salvare e il nome del file compresso&quot;</span>);
         gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
-        <span class="keywordflow">if</span>(sorg==NULL){         
+        <span class="keywordtype">char</span> *ctrl=<span class="keyword">new</span> <span class="keywordtype">char</span>[5];
+        <span class="keywordflow">if</span> (sorg != NULL)
+                controlla_selezione(ctrl,sorg);
+        <span class="keywordflow">if</span>(sorg==NULL || strcmp(ctrl,<span class="stringliteral">&quot;.txt&quot;</span>)!=0){               
                 mostra_messaggi(<span class="keyword">false</span>,1);
                 <span class="keywordflow">return</span>;
                 }
@@ -214,7 +217,10 @@ Variabili</h2></td></tr>
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;mex_esegui&quot;</span>)),<span class="stringliteral">&quot;Decomprimi&quot;</span>);
         gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(<a class="code" href="Huffman_8cc.html#afa501dbb63ae6077ac8db76b560de42b">builder</a>,<span class="stringliteral">&quot;msg&quot;</span>)),<span class="stringliteral">&quot;Scegli dove salvare e il nome del file decompresso&quot;</span>);
         gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
-        <span class="keywordflow">if</span>(sorg==NULL){         
+        <span class="keywordtype">char</span> *ctrl=<span class="keyword">new</span> <span class="keywordtype">char</span>[5];
+        <span class="keywordflow">if</span> (sorg != NULL)
+                controlla_selezione(ctrl,sorg);
+        <span class="keywordflow">if</span>(sorg==NULL || strcmp(ctrl,<span class="stringliteral">&quot;.huf&quot;</span>)!=0){               
                 mostra_messaggi(<span class="keyword">false</span>,0);
                 <span class="keywordflow">return</span>;
                 }
@@ -397,7 +403,7 @@ Variabili</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generato Ven 5 Lug 2013 11:47:15 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Ven 5 Lug 2013 12:24:12 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
