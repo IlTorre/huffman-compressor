@@ -30,6 +30,21 @@
 
 GtkBuilder *builder;
 
+/** Controlla che l'utente abbia selezionato un file.
+ *
+ * Per evitare che l'utente possa comprimere cartelle,
+ * questa funzione controlla l'estensione del file selezionato.
+ */
+static void controlla_selezione(char ctrl[],gchar *sorg){
+	int i=0;
+	int j=(strlen(sorg)-4);
+	int lungh=strlen(sorg);
+	for(;i<5 && j<lungh;i++,j++)
+		ctrl[i]=sorg[j];
+	ctrl[4]='\0';
+}
+
+
 /** Chiude la finestra aperta.
  *
  * Segnale che chiude la finestra in cui viene premuto il pulsante.
@@ -85,7 +100,10 @@ extern "C" void handler_comprimi(GtkButton *button,gpointer data){
 	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"mex_esegui")),"Comprimi");
 	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"msg")),"Scegli dove salvare e il nome del file compresso");
 	gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
-	if(sorg==NULL){		
+	char *ctrl=new char[5];
+	if (sorg != NULL)
+		controlla_selezione(ctrl,sorg);
+	if(sorg==NULL || strcmp(ctrl,".txt")!=0){		
 		mostra_messaggi(false,1);
 		return;
 		}
@@ -169,7 +187,10 @@ extern "C" void handler_decomprimi(GtkButton *button,gpointer data){
 	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"mex_esegui")),"Decomprimi");
 	gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder,"msg")),"Scegli dove salvare e il nome del file decompresso");
 	gchar *sorg=gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data));
-	if(sorg==NULL){		
+	char *ctrl=new char[5];
+	if (sorg != NULL)
+		controlla_selezione(ctrl,sorg);
+	if(sorg==NULL || strcmp(ctrl,".huf")!=0){		
 		mostra_messaggi(false,0);
 		return;
 		}
