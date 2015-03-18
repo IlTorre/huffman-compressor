@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Compressore e decompressore di Huffman: Riferimenti per il file decomprimi.cc</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Compressore e decompressore di Huffman
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Generato da Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funzioni</a>  </div>
+  <div class="headertitle">
+<div class="title">Riferimenti per il file decomprimi.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;fstream&gt;</code><br/>
+<code>#include &lt;cstring&gt;</code><br/>
+<code>#include &quot;<a class="el" href="struttura__dati_8h_source.html">struttura_dati.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a0a90cde8b4f5a78a62d0675e49933848">numero_caratteri</a> (istream &amp;f4)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricava il numero dei caratteri.  <a href="#a0a90cde8b4f5a78a62d0675e49933848"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a4e3f07f4d3bc63db4a001f4cb2325c0c">ricava_caratteri</a> (istream &amp;f4, int n_caratteri)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricava i caratteri.  <a href="#a4e3f07f4d3bc63db4a001f4cb2325c0c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a9abfa751284a1ce1f91e1c26c8c1fe8b">checkbit</a> (unsigned char BUFFER)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlla se è settato il bit.  <a href="#a9abfa751284a1ce1f91e1c26c8c1fe8b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a451f085465772995b667f15799c3b8ef">leggi_albero</a> (istream &amp;f4, unsigned char &amp;BUFFER, int &amp;l_buffer, int l_albero)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricava il codice binario univoco dell'albero.  <a href="#a451f085465772995b667f15799c3b8ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#ade26de318714cc0e2901a4128c79d9cf">crea_nodo</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nodo non inizializzato.  <a href="#ade26de318714cc0e2901a4128c79d9cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a8ab8827e29055d63848e3dc1b6d7cadd">costruisci_albero</a> (const unsigned char caratteri[], const bool albero[], int l_albero)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce l'albero di decompressione.  <a href="#a8ab8827e29055d63848e3dc1b6d7cadd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a8c9810d3c0b036cbdec6c3482ab49e52">crea_albero</a> (istream &amp;f4, unsigned char &amp;BUFFER, int &amp;l_buffer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea l'albero di decompressione.  <a href="#a8c9810d3c0b036cbdec6c3482ab49e52"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a58d990f91df90ccce1e6817dc4d17b64">decodifica</a> (istream &amp;f4, ostream &amp;f5, unsigned char &amp;BUFFER, int &amp;l_buffer, <a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> root)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodifica carattere per carattere.  <a href="#a58d990f91df90ccce1e6817dc4d17b64"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decomprimi_8cc.html#a51ca7751b472c835adaff4d47079c913">decomprimi</a> (char sorgente[], char destinazione[])</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione di Decompressione.  <a href="#a51ca7751b472c835adaff4d47079c913"></a><br/></td></tr>
+</table>
+<hr/><h2>Documentazione delle funzioni</h2>
+<a class="anchor" id="a9abfa751284a1ce1f91e1c26c8c1fe8b"></a><!-- doxytag: member="decomprimi.cc::checkbit" ref="a9abfa751284a1ce1f91e1c26c8c1fe8b" args="(unsigned char BUFFER)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="decomprimi_8cc.html#a9abfa751284a1ce1f91e1c26c8c1fe8b">checkbit</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>BUFFER</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Controlla se è settato il bit. </p>
+<p>La funzione controlla lo stato del bit più significativo. Ritorna un valore booleano. </p>
+<div class="fragment"><pre class="fragment">                                   {
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> MASK = 128;
+        <span class="keywordflow">return</span> (BUFFER &amp; MASK);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8ab8827e29055d63848e3dc1b6d7cadd"></a><!-- doxytag: member="decomprimi.cc::costruisci_albero" ref="a8ab8827e29055d63848e3dc1b6d7cadd" args="(const unsigned char caratteri[], const bool albero[], int l_albero)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> <a class="el" href="decomprimi_8cc.html#a8ab8827e29055d63848e3dc1b6d7cadd">costruisci_albero</a> </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned char&#160;</td>
+          <td class="paramname"><em>caratteri</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>albero</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l_albero</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Costruisce l'albero di decompressione. </p>
+<p>La funzione scorre il codice identificativo dell'albero generato da <a class="el" href="decomprimi_8cc.html#a451f085465772995b667f15799c3b8ef" title="Ricava il codice binario univoco dell&#39;albero.">leggi_albero</a> e lo ricostruisce. La funzione ritorna un puntatore alla radice. </p>
+<div class="fragment"><pre class="fragment">                                                                                         {
+
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> root = <a class="code" href="decomprimi_8cc.html#ade26de318714cc0e2901a4128c79d9cf" title="Crea un nodo non inizializzato.">crea_nodo</a>();
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = root;
+        <span class="keywordtype">int</span> conta_car = 0;
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i&lt;l_albero; i++){
+                <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> temp = <a class="code" href="decomprimi_8cc.html#ade26de318714cc0e2901a4128c79d9cf" title="Crea un nodo non inizializzato.">crea_nodo</a>();
+                <span class="keywordflow">if</span> (!albero[i]){
+                        temp-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = x;
+                        x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> = temp;
+                        x = temp;
+                        }
+                <span class="keywordflow">else</span>
+                        <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> == NULL){
+                                x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> = caratteri[conta_car++];
+                                x=x-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>;
+                                <span class="keywordflow">while</span> (x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> != NULL)
+                                        x = x-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a>;
+                                temp-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = x;
+                                x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> = temp;
+                                x = temp;
+                                }
+                        <span class="keywordflow">else</span>{
+                                temp-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = x;
+                                x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> = temp;
+                                x=temp;
+                                }
+                }
+        x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> = caratteri[conta_car];
+        <span class="keywordflow">return</span> root;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8c9810d3c0b036cbdec6c3482ab49e52"></a><!-- doxytag: member="decomprimi.cc::crea_albero" ref="a8c9810d3c0b036cbdec6c3482ab49e52" args="(istream &amp;f4, unsigned char &amp;BUFFER, int &amp;l_buffer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> <a class="el" href="decomprimi_8cc.html#a8c9810d3c0b036cbdec6c3482ab49e52">crea_albero</a> </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>f4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea l'albero di decompressione. </p>
+<p>Fornisce tutti gli elementi necessari per la creazione dell'albero alla funzione <a class="el" href="decomprimi_8cc.html#a8ab8827e29055d63848e3dc1b6d7cadd" title="Costruisce l&#39;albero di decompressione.">costruisci_albero</a>. Ritorna un puntatore alla radice dell'albero </p>
+<div class="fragment"><pre class="fragment">                                                                     {
+        <span class="keywordtype">int</span> n_caratteri = <a class="code" href="decomprimi_8cc.html#a0a90cde8b4f5a78a62d0675e49933848" title="Ricava il numero dei caratteri.">numero_caratteri</a>(f4);
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *caratteri = <a class="code" href="decomprimi_8cc.html#a4e3f07f4d3bc63db4a001f4cb2325c0c" title="Ricava i caratteri.">ricava_caratteri</a>(f4, n_caratteri);
+        <span class="keywordtype">int</span> l_albero=2*(n_caratteri-1);
+        <span class="keywordtype">bool</span> *albero = <a class="code" href="decomprimi_8cc.html#a451f085465772995b667f15799c3b8ef" title="Ricava il codice binario univoco dell&#39;albero.">leggi_albero</a> (f4, BUFFER, l_buffer, l_albero);
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> root = <a class="code" href="decomprimi_8cc.html#a8ab8827e29055d63848e3dc1b6d7cadd" title="Costruisce l&#39;albero di decompressione.">costruisci_albero</a>(caratteri,albero,l_albero);
+        <span class="keyword">delete</span> [] caratteri;
+        <span class="keyword">delete</span> [] albero;
+        <span class="keywordflow">return</span> root;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ade26de318714cc0e2901a4128c79d9cf"></a><!-- doxytag: member="decomprimi.cc::crea_nodo" ref="ade26de318714cc0e2901a4128c79d9cf" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a> <a class="el" href="decomprimi_8cc.html#ade26de318714cc0e2901a4128c79d9cf">crea_nodo</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Crea un nodo non inizializzato. </p>
+<p>La funzione alloca un nodo e inizializza a NULL i puntatori. Ritorna un puntatore al nuovo elemento creato. </p>
+<div class="fragment"><pre class="fragment">                  {
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = <span class="keyword">new</span> <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">nodo_t</a>;
+        x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> = NULL;
+        x-&gt; left = NULL;
+        x-&gt;<a class="code" href="structnodo__t.html#a7552a94330c468be83d0230015b1e91b">parent</a> = NULL;
+        <span class="keywordflow">return</span> x;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a58d990f91df90ccce1e6817dc4d17b64"></a><!-- doxytag: member="decomprimi.cc::decodifica" ref="a58d990f91df90ccce1e6817dc4d17b64" args="(istream &amp;f4, ostream &amp;f5, unsigned char &amp;BUFFER, int &amp;l_buffer, pnode root)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="decomprimi_8cc.html#a58d990f91df90ccce1e6817dc4d17b64">decodifica</a> </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>f4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>f5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struttura__dati_8h.html#a9f60b9b58782ba6160e6fbb0e07f01d1">pnode</a>&#160;</td>
+          <td class="paramname"><em>root</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Decodifica carattere per carattere. </p>
+<p>La funzione scorre i bit del file compresso e li trasforma grzie all'albero costruito precedentemente in caratteri che scrive sul file decompresso. </p>
+<div class="fragment"><pre class="fragment">                                                                                          {
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> x = root;
+        <span class="keywordflow">while</span> (<span class="keyword">true</span>){
+                <span class="keywordflow">if</span> (l_buffer == 0){
+                        f4.read(reinterpret_cast&lt;char *&gt;(&amp;BUFFER), <span class="keyword">sizeof</span> (BUFFER));
+                        l_buffer = 8;
+                        }
+                <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a> == NULL &amp;&amp; x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a> == NULL){
+                        <span class="keywordflow">if</span> (x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a> == 0)
+                                <span class="keywordflow">return</span>;
+                        f5&lt;&lt;x-&gt;<a class="code" href="structnodo__t.html#ad989a126e04f56f802a1cbe2bd5e9873">carattere</a>;
+                        x = root;
+                        }       
+                <span class="keywordflow">if</span>(!<a class="code" href="decomprimi_8cc.html#a9abfa751284a1ce1f91e1c26c8c1fe8b" title="Controlla se è settato il bit.">checkbit</a>(BUFFER))
+                        x=x-&gt;<a class="code" href="structnodo__t.html#a099c3cb9fc78894669a96f326ef1c995">left</a>;
+                <span class="keywordflow">else</span>
+                        x=x-&gt;<a class="code" href="structnodo__t.html#a63feda6a0c60ef1c3ad40b2f8af8b3d5">right</a>;
+                BUFFER = BUFFER&lt;&lt;1;     
+                l_buffer--;
+                }       
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a51ca7751b472c835adaff4d47079c913"></a><!-- doxytag: member="decomprimi.cc::decomprimi" ref="a51ca7751b472c835adaff4d47079c913" args="(char sorgente[], char destinazione[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="decomprimi_8h.html#a51ca7751b472c835adaff4d47079c913">decomprimi</a> </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sorgente</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>destinazione</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Funzione di Decompressione. </p>
+<p>Questa funzione si occupa della decompressione del file. Riceve in input il percorso del file da decomprimere e il nome da dare al file decompresso; Restituisce un valore booleano che indica se l'operazione è andata a buon fine. </p>
+<div class="fragment"><pre class="fragment">                                                     {
+        ifstream f4(sorgente);
+        <span class="keywordflow">if</span> (!f4)
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> BUFFER = 0;
+        <span class="keywordtype">int</span> l_buffer = 0;
+        <a class="code" href="structnodo__t.html" title="Struttura di un nodo dell&#39;albero.">pnode</a> root = <a class="code" href="comprimi_8cc.html#a48e40d9996e8606503a0aa06f8b30ad8" title="Crea l&#39;albero di compressione.">crea_albero</a>(f4,BUFFER,l_buffer);
+        ofstream f5 (destinazione);
+        <span class="keywordflow">if</span> (!f5)
+                <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        <a class="code" href="decomprimi_8cc.html#a58d990f91df90ccce1e6817dc4d17b64" title="Decodifica carattere per carattere.">decodifica</a> (f4, f5, BUFFER, l_buffer, root);
+        f4.close();
+        f5.close();
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a451f085465772995b667f15799c3b8ef"></a><!-- doxytag: member="decomprimi.cc::leggi_albero" ref="a451f085465772995b667f15799c3b8ef" args="(istream &amp;f4, unsigned char &amp;BUFFER, int &amp;l_buffer, int l_albero)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* <a class="el" href="decomprimi_8cc.html#a451f085465772995b667f15799c3b8ef">leggi_albero</a> </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>f4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char &amp;&#160;</td>
+          <td class="paramname"><em>BUFFER</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>l_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>l_albero</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ricava il codice binario univoco dell'albero. </p>
+<p>Legge dal file il codice binario che identifica l'albero. </p>
+<div class="fragment"><pre class="fragment">                                                                                     {
+        <span class="keywordtype">bool</span> *albero = <span class="keyword">new</span> <span class="keywordtype">bool</span> [l_albero];
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i&lt;l_albero; i++){
+                <span class="keywordflow">if</span> (l_buffer == 0){
+                        f4.read(reinterpret_cast&lt;char *&gt;(&amp;BUFFER), <span class="keyword">sizeof</span> (BUFFER));
+                        l_buffer = 8;
+                        }
+                albero[i] = <a class="code" href="decomprimi_8cc.html#a9abfa751284a1ce1f91e1c26c8c1fe8b" title="Controlla se è settato il bit.">checkbit</a>(BUFFER);
+                BUFFER = BUFFER&lt;&lt;1;
+                l_buffer--;
+                }
+        <span class="keywordflow">return</span> albero;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0a90cde8b4f5a78a62d0675e49933848"></a><!-- doxytag: member="decomprimi.cc::numero_caratteri" ref="a0a90cde8b4f5a78a62d0675e49933848" args="(istream &amp;f4)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="decomprimi_8cc.html#a0a90cde8b4f5a78a62d0675e49933848">numero_caratteri</a> </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>f4</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ricava il numero dei caratteri. </p>
+<p>La funzione legge dal file sorgente il primo byte e lo associa al numero di caratteri diversi presenti nel file originale. </p>
+<div class="fragment"><pre class="fragment">                                 {
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> car;
+        f4.read(reinterpret_cast&lt;char *&gt;(&amp;car), <span class="keyword">sizeof</span> (car));
+        <span class="keywordflow">return</span> (static_cast&lt;int&gt;(car));
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4e3f07f4d3bc63db4a001f4cb2325c0c"></a><!-- doxytag: member="decomprimi.cc::ricava_caratteri" ref="a4e3f07f4d3bc63db4a001f4cb2325c0c" args="(istream &amp;f4, int n_caratteri)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char* <a class="el" href="decomprimi_8cc.html#a4e3f07f4d3bc63db4a001f4cb2325c0c">ricava_caratteri</a> </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>f4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_caratteri</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ricava i caratteri. </p>
+<p>La funzione legge dal file sorgente i caratteri presenti nel file originale. </p>
+<div class="fragment"><pre class="fragment">                                                              {
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *car = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> [n_caratteri];
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;n_caratteri;i++)
+                f4.read(reinterpret_cast&lt;char *&gt;(&amp;car[i]), sizeof (car[i]));
+        <span class="keywordflow">return</span> car;
+}
+</pre></div>
+</div>
+</div>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Generato Mer 3 Lug 2013 15:17:47 per Compressore e decompressore di Huffman da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

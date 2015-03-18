@@ -1,0 +1,1 @@
+Attraverso un'interfaccia grafica semplice e intuitiva, l'utente può comprimere e decomprimere file mediante l'algoritmo pilota dei compressori moderni: Huffman.
